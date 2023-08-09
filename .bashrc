@@ -65,6 +65,9 @@ export TERM=xterm-256color
 echo "TERM=${TERM}"
 echo ""
 
+# Add local builds to the path
+export PATH=$HOME/local/bin:$PATH
+
 # Setting up root automatically 
 # export ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt
 
