@@ -7,12 +7,14 @@ A repository for config files for various software tools for both remote machine
 tmux is a very old version, v1.8 (Aug 2023). This needs to be upgraded to continue with the tmuxconfig file.
 
 Installation has generally been from the guide here: https://frankenthal.dev/post/tmux-on-lxplus\_pt0/
+with an additional stack overflow discussion here: https://superuser.com/questions/1259140/how-to-install-tmux-locally-without-root-access
  
 If the lxplus system needs to get restored to system defaults, the instructions for installing a newer version of tmux can be found here: https://github.com/tmux/tmux/wiki/Installing
 
 It is necessary to build both libevent and ncurses. Instructions can be found on the tmux installation page.
 
 Notes: tmux may need to be rebuilt in accordance with the github page instead of the guide linked above.
+
 
 #### Installation message from libevent
 
