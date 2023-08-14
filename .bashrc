@@ -24,14 +24,14 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-echo "RUCIO_ACCOUNT=rbate"
-export RUCIO_ACCOUNT=rbate
-echo "ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022"
-export ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022
-echo "KRB5_CONFIG=$ATLAS_LOCAL_ROOT_BASE/user/krb5.conf"
-export KRB5_CONFIG=$ATLAS_LOCAL_ROOT_BASE/user/krb5.conf
-echo "ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt"
-export ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt
+# echo "RUCIO_ACCOUNT=rbate"
+# export RUCIO_ACCOUNT=rbate
+# echo "ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022"
+# export ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022
+# echo "KRB5_CONFIG=$ATLAS_LOCAL_ROOT_BASE/user/krb5.conf"
+# export KRB5_CONFIG=$ATLAS_LOCAL_ROOT_BASE/user/krb5.conf
+# echo "ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt"
+# export ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt
 
 # Python Configuration
 # scl enable rh-python38 bash --norc
