@@ -1,0 +1,12 @@
+[user]
+	name = Russell Bate
+	email = russell.bate@cern.ch
+[color]
+	ui = auto
+[push]
+	default = simple
+[http]
+	postBuffer = 1048576000
+	emptyAuth = true
+[pull]
+	ff = only

@@ -73,9 +73,6 @@ echo ""
 # Add local builds to the path
 export PATH=$HOME/local/bin:$PATH
 
-# Setting up root automatically 
-# export ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 #__conda_setup="$('/afs/cern.ch/user/r/rbate/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
