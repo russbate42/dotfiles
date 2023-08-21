@@ -37,3 +37,11 @@ See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 \----------------------------------------------------------------------
 
+## Installation notes from Conda
+conda has been installed with the ./setup_conda.sh from within the salt framework.
+lxplus seems to already have a base version of conda installed but this is limited
+because it is not in a folder with the correct ownership for users to modify.
+conda is installed in ~. Therefore, it was necessary to change the CONDA\_ROOT variable
+from the base installation on lxplus to the user install located in ~. Therefore
+> export CONDA\_ROOT=~/conda
+or wherever the local conda installation exists.

@@ -62,8 +62,15 @@ echo ""
 # SET EOS DIRECTORY
 EOS_DIR=/eos/user/r/rbate
 
-# TMUX
+## TMUX
 alias tmux="tmux -u"
+
+# configure tmux socket
+export TMUX_TMPDIR=/tmp/$USER/
+# Note socket path is TMUX
+echo "TMUX sessions configured to folder: ${TMUX_TMPDIR}"
+echo "TMUX socket: ${TMUX}"
+echo ""
 
 # for screen color with tmux
 export TERM=xterm-256color
@@ -72,6 +79,8 @@ echo ""
 
 # Add local builds to the path
 export PATH=$HOME/local/bin:$PATH
+# for some reason some builds are in bin bin
+export PATH=$HOME/local/bin/bin:$PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
