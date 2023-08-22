@@ -28,3 +28,6 @@ inoremap ''' '''  '''<left><left><left><left>
 " Enable Omnicomplete features
 set omnifunc=syntaxcomplete#Complete
 set omnifunc=pythonscriptcomplete#CompletePython
+
+" Pasting
+"set: paste and set: nopaste will enable/disable normal paste mode
