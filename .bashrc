@@ -82,6 +82,15 @@ export PATH=$HOME/local/bin:$PATH
 # for some reason some builds are in bin bin
 export PATH=$HOME/local/bin/bin:$PATH
 
+ktmux(){
+    if [[ -z "$1" ]]; then
+        k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
+    else
+        k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session -s $1
+    fi
+}
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 #__conda_setup="$('/afs/cern.ch/user/r/rbate/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
