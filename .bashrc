@@ -90,6 +90,15 @@ ktmux(){
     fi
 }
 
+persist(){
+    if [[ -z "$1" ]]; then
+        echo "No argument passed to persist."
+    else
+        k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- "$@"
+    fi
+}
+
+alias goeos="cd ${EOS_DIR} && ls -lah"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
