@@ -12,5 +12,7 @@ echo "ln -s -T dotfiles/.screenrc .screenrc"
 ln -s -T dotfiles/.screenrc .screenrc
 echo "ln -s -T dotfiles/.gitconfig .gitconfig"
 ln -s -T dotfiles/.gitconfig .gitconfig
+echo "ln -s -T dotfiles/setupenv.sh setupenv.sh"
+ln -s -T dotfiles/setupenv.sh setupenv.sh
 
 echo -e "\n\tdone!"
