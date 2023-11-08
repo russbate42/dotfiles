@@ -63,7 +63,8 @@ echo ""
 EOS_DIR=/eos/user/r/rbate
 
 ## TMUX
-alias tmux="tmux -u"
+alias tmux='tmux -u'
+alias tmux_zsh='SHELL=/usr/bin/zsh tmux -u'
 
 # configure tmux socket
 export TMUX_TMPDIR=/tmp/$USER/
@@ -90,6 +91,14 @@ ktmux(){
     fi
 }
 
+ktmux_zsh(){
+    if [[ -z "$1" ]]; then
+        SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
+    else
+        SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session -s $1
+    fi
+}
+
 persist(){
     if [[ -z "$1" ]]; then
         echo "No argument passed to persist."
@@ -102,16 +111,16 @@ alias goeos="cd ${EOS_DIR} && ls -lah"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/afs/cern.ch/user/r/rbate/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#__conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 #if [ $? -eq 0 ]; then
 #    eval "$__conda_setup"
 #else
-#    if [ -f "/afs/cern.ch/user/r/rbate/miniconda3/etc/profile.d/conda.sh" ]; then
-#        . "/afs/cern.ch/user/r/rbate/miniconda3/etc/profile.d/conda.sh"
+#    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+#        . "/usr/etc/profile.d/conda.sh"
 #    else
-#        export PATH="/afs/cern.ch/user/r/rbate/miniconda3/bin:$PATH"
+#        export PATH="/usr/bin:$PATH"
 #    fi
 #fi
 #unset __conda_setup
-# <<< conda initialize <<<
+## <<< conda initialize <<<
 

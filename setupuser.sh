@@ -4,6 +4,8 @@ cd ~
 
 echo "ln -s -T dotfiles/.bashrc .bashrc"
 ln -s -T dotfiles/.bashrc .bashrc
+echo "ln -s -T dotfiles/.zshrc .zshrc"
+ln -s -T dotfiles/.zshrc .zshrc
 echo "ln -s -T dotfiles/.tmux.conf .tmux.conf"
 ln -s -T dotfiles/.tmux.conf .tmux.conf
 echo "ln -s -T dotfiles/.vimrc .vimrc"
