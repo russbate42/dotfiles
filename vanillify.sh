@@ -16,5 +16,7 @@ echo "rm ../.screenrc"
 rm ~/.screenrc
 echo "rm ../.gitconfig"
 rm ~/.gitconfig
+echo "rm ~/setupenv.sh"
+rm ~/setupenv.sh
 
 echo -e "\n\tdone!\n"

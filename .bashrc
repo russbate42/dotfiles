@@ -64,7 +64,6 @@ EOS_DIR=/eos/user/r/rbate
 
 ## TMUX
 alias tmux='tmux -u'
-alias tmux_zsh='SHELL=/usr/bin/zsh tmux -u'
 
 # configure tmux socket
 export TMUX_TMPDIR=/tmp/$USER/
@@ -96,6 +95,14 @@ ktmux_zsh(){
         SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
     else
         SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session -s $1
+    fi
+}
+
+tmux_zsh(){
+    if [[ -z "$1" ]]; then
+        SHELL=/usr/bin/zsh tmux new-session
+    else
+        SHELL=/usr/bin/zsh tmux new-session -s $1
     fi
 }
 

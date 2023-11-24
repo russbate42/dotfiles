@@ -2,8 +2,12 @@ echo -e "\nSetting up sym links\n"
 
 cd ~
 
+echo "rm .bashrc"
+rm .bashrc
 echo "ln -s -T dotfiles/.bashrc .bashrc"
 ln -s -T dotfiles/.bashrc .bashrc
+echo "rm .zshrc"
+rm .zshrc
 echo "ln -s -T dotfiles/.zshrc .zshrc"
 ln -s -T dotfiles/.zshrc .zshrc
 echo "ln -s -T dotfiles/.tmux.conf .tmux.conf"

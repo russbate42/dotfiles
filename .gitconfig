@@ -10,3 +10,5 @@
 	emptyAuth = true
 [pull]
 	ff = only
+[core]
+	editor = vim
