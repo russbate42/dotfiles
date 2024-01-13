@@ -81,20 +81,28 @@ echo ""
 export PATH=$HOME/local/bin:$PATH
 # for some reason some builds are in bin bin
 export PATH=$HOME/local/bin/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+export MANPATH=$HOME/.local/share/man:$MANPATH
 
 ktmux(){
     if [[ -z "$1" ]]; then
-        k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
+		k5reauth -f -i 3600 -p $USER -k ~/private/$USER.keytab -- tmux new-session
+        #k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
     else
-        k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session -s $1
+		k5reauth -f -i 3600 -p $USER -k ~/private/$USER.keytab -- tmux new-session -s $1
+        #k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session -s $1
     fi
 }
 
 ktmux_zsh(){
     if [[ -z "$1" ]]; then
-        SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
+		SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p $USER -k ~/private/$USER.keytab -- tmux new-session
+        #SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
     else
-        SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session -s $1
+		SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p $USER -k ~/private/$USER.keytab -- tmux new-session -s $1
+        #SHELL=/usr/bin/zsh k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session -s $1
     fi
 }
 
@@ -110,7 +118,8 @@ persist(){
     if [[ -z "$1" ]]; then
         echo "No argument passed to persist."
     else
-        k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- "$@"
+		k5reauth -f -i 3600 -p $USER -k ~/private/$USER.keytab -- "$@"
+        #k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- "$@"
     fi
 }
 
