@@ -4,9 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-## Russell Stuff
-alias nv=~/sandbox/nvim.appimage
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -102,6 +99,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#######################
+## RUSSELL COMPONENT ##
+#######################
+#=============================================================================#
+alias nv=~/sandbox/nvim.appimage
+# for screen color with tmux
+export TERM=xterm-256color
+echo "TERM=${TERM}"
+echo ""
+
+# Add local builds to the path
+export PATH=$HOME/local/bin:$PATH
+# for some reason some builds are in bin bin
+export PATH=$HOME/local/bin/bin:$PATH
+# same for .local
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin/bin:$PATH
+
+#=============================================================================#
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

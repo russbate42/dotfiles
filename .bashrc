@@ -1,3 +1,26 @@
+##======================================
+## USER RBATE BASHRC STANDARD ##
+##============================##
+# Note socket path is TMUX
+echo "TMUX sessions configured to folder: ${TMUX_TMPDIR}"
+echo "TMUX socket: ${TMUX}"
+echo ""
+
+# for screen color with tmux
+export TERM=xterm-256color
+echo "TERM=${TERM}"
+echo ""
+
+# Add local builds to the path
+export PATH=$HOME/local/bin:$PATH
+# for some reason some builds are in bin bin
+export PATH=$HOME/local/bin/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+export MANPATH=$HOME/.local/share/man:$MANPATH
+#=============================================================================#
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
