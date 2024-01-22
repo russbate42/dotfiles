@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 alias nv=~/sandbox/nvim.appimage
 # for screen color with tmux
 export TERM=xterm-256color
-echo "TERM=${TERM}"
+# echo "TERM=${TERM}"
 echo ""
 
 # Add local builds to the path
