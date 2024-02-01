@@ -170,6 +170,10 @@ echo ""
 # SET EOS DIRECTORY
 EOS_DIR=/eos/user/r/rbate
 
+## ALIASES
+alias fh="find $(pwd)/"
+alias goeos="cd ${EOS_DIR} && ls -lah"
+
 ## TMUX
 alias tmux="tmux -u"
 
@@ -206,7 +210,6 @@ persist(){
     fi
 }
 
-alias goeos="cd ${EOS_DIR} && ls -lah"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

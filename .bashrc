@@ -64,6 +64,10 @@ echo ""
 # SET EOS DIRECTORY
 EOS_DIR=/eos/user/r/rbate
 
+## ALIASES
+alias fh="find $(pwd)/"
+alias goeos="cd ${EOS_DIR} && ls -lah"
+
 ## TMUX
 alias tmux='tmux -u'
 
@@ -124,8 +128,6 @@ persist(){
         #k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- "$@"
     fi
 }
-
-alias goeos="cd ${EOS_DIR} && ls -lah"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
