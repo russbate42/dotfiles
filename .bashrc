@@ -53,6 +53,8 @@ else
 	python -V
 	echo ""
 fi
+# Set up this switch to check for python, and if not but python3 is a command alias
+# alias python=python3
 
 echo "Hostname: $HOSTNAME"
 echo "For remote port forwarding in a new terminal type"
