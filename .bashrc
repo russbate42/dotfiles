@@ -19,6 +19,9 @@ export PATH=$HOME/.local/bin:$PATH
 
 export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 export MANPATH=$HOME/.local/share/man:$MANPATH
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 #=============================================================================#
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -113,7 +116,8 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias lh='ls -h'
+alias lah='ls -lah'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

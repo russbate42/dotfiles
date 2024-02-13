@@ -110,6 +110,10 @@ export TERM=xterm-256color
 # echo "TERM=${TERM}"
 echo ""
 
+# Languages
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Add local builds to the path
 export PATH=$HOME/local/bin:$PATH
 # for some reason some builds are in bin bin

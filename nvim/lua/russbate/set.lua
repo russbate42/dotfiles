@@ -8,3 +8,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+-- "vim.api.nvim_set_option("clipboard", "unnamed")
+
+-- vim.opt.clipboard = "unnamedplus"
+
