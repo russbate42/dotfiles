@@ -19,4 +19,15 @@ ln -s -T dotfiles/.screenrc .screenrc
 echo "ln -s -T dotfiles/.gitconfig .gitconfig"
 ln -s -T dotfiles/.gitconfig .gitconfig
 
-echo -e "\n\tdone!"
+printf "\nsetting up neovim.."
+#echo "searching for neovim in ~/sandbox/"
+#if [[ -f ~/sandbox/nvim.appimage ]] then
+#    else if:
+#
+#    else if:
+#
+#fi
+
+cp -rsT ~/dotfiles/nvim ~/.config/nvim
+
+printf "\n\tdone!\n\n"

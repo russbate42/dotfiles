@@ -3,18 +3,25 @@
 ## Necessary Linux Packages
  - ripgrep
  - xdotool
+ - python3
+ - - can use python3-minimal apt-get package
+ - - python3 -m pip install --user --upgrade pynvim
 
 ## Tools
 ### Search - " ps"
  - Fast search using grep/ripgrep for string
+ - - Hit space ps
 
 ### File explorerer
  - Fast file switching
+ - - Hit space pv
+ - - Hit space pf
 
 ## Notes for VimTeX
  - xdotool is a workaround for Wayland and Zathura. This isn't strictly
  necessary if you are running x11. For now I'm choosing to simply use
  Okular as the pdf viewer.
+ - It doesn't like okular currently, switching back to zathura.
 
 ## Packages
 ### VimTeX
@@ -54,6 +61,8 @@
  - - Highlight matching delimiters
 
 ### treesitter
+ - If there is an issue with tree-sitter try:
+    :TSUpdate or :TSUpdateSync
 
 ### nvim-surround
 

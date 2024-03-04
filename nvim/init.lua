@@ -1,7 +1,9 @@
 
 -- THIS IS ALL VIMTEX STUFF HERE
-vim.g.vimtex_view_method = 'okular' --[zathura, zathura_simple]
+vim.g.vimtex_view_method = 'zathura' --[zathura, zathura_simple]
 vim.g.tex_flavour = 'latex'
+vim.g.vimtex_view_general_options = [['--unique file:@pdf\#src:@line@tex']]
+
 
 -- vim.g.vimtex_compiler_method = 'latexmk'
 -- vim.g.vimtex_compiler_enabled = 'true'

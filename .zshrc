@@ -105,6 +105,9 @@ source $ZSH/oh-my-zsh.sh
 #######################
 #=============================================================================#
 alias nv=~/sandbox/nvim.appimage
+alias lx='ssh rbate@lxplus.cern.ch'
+alias python='python3'
+
 # for screen color with tmux
 export TERM=xterm-256color
 # echo "TERM=${TERM}"

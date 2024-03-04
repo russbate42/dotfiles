@@ -66,6 +66,15 @@ return require('packer').startup(function(use)
   -- I don't think vim-snippets and luasnip/ultisnips is necessary
   -- use {'honza/vim-snippets'}
 
+  -- install without yarn or npm
+  -- use({
+  --     "iamcco/markdown-preview.nvim",
+  --     run = function() vim.fn["mkdp#util#install"]() end,
+  -- })
+
+  -- NVIM TREE, for now leave this out as we will just use netrw
+  -- use { 'nvim-tree/nvim-tree.lua' }
+
   if packer_bootstrap then
       require('packer').sync()
   end
