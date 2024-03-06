@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
 
   use {'m4xshen/autoclose.nvim'}
 
-  use {'SirVer/ultisnips'}
+--  use {'SirVer/ultisnips'}
 
   use ({
       'L3MON4D3/LuaSnip',
@@ -62,6 +62,8 @@ return require('packer').startup(function(use)
       -- install jsregexp (optional!:).
       run = "make install_jsregexp"
   })
+
+  use {'ixru/nvim-markdown'}
 
   -- I don't think vim-snippets and luasnip/ultisnips is necessary
   -- use {'honza/vim-snippets'}

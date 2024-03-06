@@ -33,8 +33,8 @@ set omnifunc=pythonscriptcomplete#CompletePython
 "set: paste and set: nopaste will enable/disable normal paste mode
 
 " Fast scroll
-map <S-Down> <c-b>
-map <S-Up> <c-f>
+"map <S-Down> <c-b>
+"map <S-Up> <c-f>
 
 "map <Down> <c-e>
 "map <Up> <c-y>
