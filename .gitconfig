@@ -10,3 +10,9 @@
 	emptyAuth = true
 [pull]
 	ff = only
+[save]
+	directory = /salt
+	directory = /home/russbate/hh4b/salt
+[safe]
+	directory = *
+	directory = *
