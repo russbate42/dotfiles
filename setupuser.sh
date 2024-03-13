@@ -1,6 +1,7 @@
 echo -e "\nSetting up sym links\n"
 
 cd ~
+echo -e "In directory ~/\n"
 
 echo "rm .bashrc"
 rm .bashrc
@@ -20,5 +21,9 @@ echo "ln -s -T dotfiles/.gitconfig .gitconfig"
 ln -s -T dotfiles/.gitconfig .gitconfig
 echo "ln -s -T dotfiles/setupenv.sh setupenv.sh"
 ln -s -T dotfiles/setupenv.sh setupenv.sh
+echo "ln -s -T dotfiles/setupuser.sh setupuser.sh"
+ln -s -T dotfiles/setupuser.sh setupuser.sh
+echo "ln -s -T dotfiles/vanillify.sh vanillify.sh"
+ln -s -T dotfiles/vanillify.sh vanillify.sh
 
 echo -e "\n\tdone!"
