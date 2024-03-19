@@ -8,10 +8,11 @@ require("russbate.packer")
 require("autoclose").setup()
 require("nvim-surround").setup()
 
+-- COLORS
 vim.o.background = "dark" -- or "light" for light mode
-
 vim.cmd([[colorscheme gruvbox]])
 
+-- NVIM MARKDOWN
 vim.g.vim_markdown_no_default_key_mappings = 1
 
 -- FOR LUASNIPS
@@ -29,7 +30,6 @@ smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '
 ]])
 
 require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
-
 require("luasnip").config.set_config({ -- Setting LuaSnip config
 
   -- Enable autotriggered snippets
@@ -38,6 +38,7 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   -- Use Tab (or some other key if you prefer) to trigger visual selection
   store_selection_keys = "<Tab>",
 })
+
 
 
 -- FOR MARKDOWN PREVIEW

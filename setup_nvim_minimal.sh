@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo -e "\nSetting up NeoVim for Ubuntu with russbate configuration."
+echo -e "\nSetting up NeoVim for Linux with minimal configuration."
 echo -e "\t+--> Please run using bash\n"
 
 #if [[ "${SHELL}" == *"zsh"* ]]; then
@@ -19,15 +19,15 @@ else
 	mkdir ~/.config
 fi
 
-# Check for nvim directory
-if [ -d ~/dotfiles/nvim ]; then
+# Check for nvim_minimal directory
+if [ -d ~/dotfiles/nvim_minimal ]; then
 	echo "--> Copying nvim config to ~/.config"
 else
-	echo "--> nvim does not exists!"
+	echo "--> nvim_minimal does not exists!"
 	exit 1
 fi
 
-cp -rsT ~/dotfiles/nvim ~/.config/nvim	
+cp -rsT ~/dotfiles/nvim_minimal ~/.config/nvim	
 echo "--> Cloning packer into .local directory ..."
 
 if [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]; then

@@ -106,6 +106,9 @@ source $ZSH/oh-my-zsh.sh
 #=============================================================================#
 alias nv=~/sandbox/nvim.appimage
 alias lx='ssh rbate@lxplus.cern.ch'
+alias triumf='ssh russbate@triumf-ml1.phas.ubc.ca'
+alias cedar='echo "Not set up yet."'
+alias triumf_t3='echo "Not set up yet."'
 alias python='python3'
 
 # for screen color with tmux
