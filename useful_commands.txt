@@ -1,0 +1,11 @@
+
+# These commands show user installed packages
+#============================================
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+
+zgrep 'Commandline: apt' /var/log/apt/history.log /var/log/apt/history.log.*.gz
+
+# This relates to tmux configuration defaults
+#============================================
+tmux show-options -g
+
