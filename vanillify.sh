@@ -8,6 +8,8 @@ echo "rm ../.tmux.conf"
 rm ~/.tmux.conf
 echo "rm ../.vimrc"
 rm ~/.vimrc
+echo "rm ../.condarc"
+rm ~/.condarc
 echo "rm ../.screenrc"
 rm ~/.screenrc
 echo "rm ../.gitconfig"

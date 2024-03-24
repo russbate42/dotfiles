@@ -171,8 +171,22 @@ echo ""
 EOS_DIR=/eos/user/r/rbate
 
 ## ALIASES
-alias fh="find $(pwd)/"
+alias fh='find $(pwd)/'
 alias goeos="cd ${EOS_DIR} && ls -lah"
+alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
+alias nv="~/sandbox/nvim.appimage"
+alias cm="du -sh -- * | sort -h"
+alias cma="du -h -- * | sort -h"
+alias gs="git status"
+
+function checkmem() {
+	if [ -z "$1" ]
+    then
+		du -h | sort -h
+	else
+		du -h ./$1 | sort -h
+    fi
+}
 
 ## TMUX
 alias tmux="tmux -u"
@@ -194,6 +208,7 @@ export PATH=$HOME/local/bin:$PATH
 # for some reason some builds are in bin bin
 export PATH=$HOME/local/bin/bin:$PATH
 
+## FUNCTIONS
 ktmux(){
     if [[ -z "$1" ]]; then
         k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- tmux new-session
@@ -210,20 +225,27 @@ persist(){
     fi
 }
 
+# Miniconda adapted
+if [ -d "${HOME}/miniconda3/bin" ]; then
+    printf "Found miniconda executable\n"
+else
+    printf "Using default conda"
+fi
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-#        . "/usr/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/usr/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-## <<< conda initialize <<<
+__conda_setup="$('/afs/cern.ch/user/r/rbate/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/afs/cern.ch/user/r/rbate/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/afs/cern.ch/user/r/rbate/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/afs/cern.ch/user/r/rbate/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 
