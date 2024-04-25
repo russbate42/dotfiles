@@ -1,11 +1,17 @@
 # Description For Russell's Neovim Config
 
+## Hotkey guide
+:Minimap opens minimap
+:MinimapClose closes minimap
+
 ## Necessary Linux Packages
  - ripgrep
  - xdotool
  - python3
  - - can use python3-minimal apt-get package
  - - python3 -m pip install --user --upgrade pynvim
+ - code-minimap
+ - - can be installed with cargo install --locked code-minimap
 
 ## Tools
 ### Search - " ps"

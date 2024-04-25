@@ -10,8 +10,16 @@ echo "rm .zshrc"
 rm .zshrc
 echo "ln -s -T dotfiles/.zshrc .zshrc"
 ln -s -T dotfiles/.zshrc .zshrc
+
+## TMUX
+echo "Setting up TMUX"
 echo "ln -s -T dotfiles/.tmux.conf .tmux.conf"
 ln -s -T dotfiles/.tmux.conf .tmux.conf
+echo "mkdir ~/.tmux"
+mkdir ~/.tmux
+echo "cp -rsT ~/dotfiles/tmux ~/.tmux"
+cp -rsT ~/dotfiles/tmux ~/.tmux
+
 echo "ln -s -T dotfiles/.vimrc .vimrc"
 ln -s -T dotfiles/.vimrc .vimrc
 echo "ln -s -T dotfiles/.screenrc .screenrc"

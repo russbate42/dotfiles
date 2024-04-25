@@ -1,34 +1,35 @@
-/var/log/apt/history.log:Commandline: apt autoremove --purge texlive
-/var/log/apt/history.log:Commandline: apt-get install latexmk
-/var/log/apt/history.log:Commandline: apt-get install zathura
-/var/log/apt/history.log:Commandline: apt-get install xdotool
-/var/log/apt/history.log:Commandline: apt-get install node.js yarn
-/var/log/apt/history.log.10.gz:Commandline: apt install net-tools
-/var/log/apt/history.log.10.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.78'
-/var/log/apt/history.log.10.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.78'
-/var/log/apt/history.log.11.gz:Commandline: apt-get install nomacs
-/var/log/apt/history.log.12.gz:Commandline: apt-get install gh
-/var/log/apt/history.log.12.gz:Commandline: apt-get install valgrind
-/var/log/apt/history.log.12.gz:Commandline: apt-get install cppcheck
-/var/log/apt/history.log.1.gz:Commandline: apt upgrade -y
-/var/log/apt/history.log.1.gz:Commandline: apt remove neovim -y
-/var/log/apt/history.log.1.gz:Commandline: apt-get install neovim
-/var/log/apt/history.log.1.gz:Commandline: apt-get remove neovim
-/var/log/apt/history.log.1.gz:Commandline: apt-get install fuse
-/var/log/apt/history.log.1.gz:Commandline: apt-get install ripgrep
+/var/log/apt/history.log.10.gz:Commandline: apt install vim-gtk3
+/var/log/apt/history.log.11.gz:Commandline: apt install sshfs
+/var/log/apt/history.log.11.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.95'
+/var/log/apt/history.log.11.gz:Commandline: apt-get install vim
+/var/log/apt/history.log.12.gz:Commandline: apt install net-tools
+/var/log/apt/history.log.12.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.78'
+/var/log/apt/history.log.12.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.78'
+/var/log/apt/history.log.1.gz:Commandline: apt-get install python3-pip
+/var/log/apt/history.log.1.gz:Commandline: apt-get purge texlive*
+/var/log/apt/history.log.1.gz:Commandline: apt-get remove tex-common --purge
 /var/log/apt/history.log.1.gz:Commandline: apt-get install texlive
-/var/log/apt/history.log.1.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.75'
-/var/log/apt/history.log.1.gz:Commandline: apt-get install sumatra
-/var/log/apt/history.log.1.gz:Commandline: apt autoremove
+/var/log/apt/history.log.1.gz:Commandline: apt-get install grip
+/var/log/apt/history.log.2.gz:Commandline: apt autoremove --purge texlive
+/var/log/apt/history.log.2.gz:Commandline: apt-get install latexmk
+/var/log/apt/history.log.2.gz:Commandline: apt-get install zathura
+/var/log/apt/history.log.2.gz:Commandline: apt-get install xdotool
+/var/log/apt/history.log.2.gz:Commandline: apt-get install node.js yarn
+/var/log/apt/history.log.3.gz:Commandline: apt upgrade -y
+/var/log/apt/history.log.3.gz:Commandline: apt remove neovim -y
 /var/log/apt/history.log.3.gz:Commandline: apt-get install neovim
-/var/log/apt/history.log.3.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.80'
-/var/log/apt/history.log.4.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.203'
-/var/log/apt/history.log.6.gz:Commandline: apt install texlive-latex-extra -y
-/var/log/apt/history.log.6.gz:Commandline: apt install okular
-/var/log/apt/history.log.6.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.81'
-/var/log/apt/history.log.7.gz:Commandline: apt-get install xclip
-/var/log/apt/history.log.7.gz:Commandline: apt autoremove
-/var/log/apt/history.log.8.gz:Commandline: apt install vim-gtk3
-/var/log/apt/history.log.9.gz:Commandline: apt install sshfs
-/var/log/apt/history.log.9.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.95'
-/var/log/apt/history.log.9.gz:Commandline: apt-get install vim
+/var/log/apt/history.log.3.gz:Commandline: apt-get remove neovim
+/var/log/apt/history.log.3.gz:Commandline: apt-get install fuse
+/var/log/apt/history.log.3.gz:Commandline: apt-get install ripgrep
+/var/log/apt/history.log.3.gz:Commandline: apt-get install texlive
+/var/log/apt/history.log.3.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.75'
+/var/log/apt/history.log.3.gz:Commandline: apt-get install sumatra
+/var/log/apt/history.log.3.gz:Commandline: apt autoremove
+/var/log/apt/history.log.5.gz:Commandline: apt-get install neovim
+/var/log/apt/history.log.5.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.80'
+/var/log/apt/history.log.6.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.203'
+/var/log/apt/history.log.8.gz:Commandline: apt install texlive-latex-extra -y
+/var/log/apt/history.log.8.gz:Commandline: apt install okular
+/var/log/apt/history.log.8.gz:Commandline: aptdaemon role='role-commit-packages' sender=':1.81'
+/var/log/apt/history.log.9.gz:Commandline: apt-get install xclip
+/var/log/apt/history.log.9.gz:Commandline: apt autoremove

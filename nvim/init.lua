@@ -4,6 +4,9 @@ vim.g.vimtex_view_method = 'zathura' --[zathura, zathura_simple]
 vim.g.tex_flavour = 'latex'
 vim.g.vimtex_view_general_options = [['--unique file:@pdf\#src:@line@tex']]
 
+vim.g.minimap_width = 10
+vim.g.minimap_auto_start = 1
+vim.g.minimap_auto_start_win_enter = 1
 
 -- vim.g.vimtex_compiler_method = 'latexmk'
 -- vim.g.vimtex_compiler_enabled = 'true'
@@ -25,4 +28,3 @@ require("russbate")
     end,
 print("hello")
 require("russbate.packer")
-

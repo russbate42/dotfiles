@@ -1,6 +1,14 @@
 ##======================================
 ## USER RBATE BASHRC STANDARD ##
 ##============================##
+alias nv=~/sandbox/nvim.appimage
+alias lx='ssh rbate@lxplus.cern.ch'
+alias triumf='ssh russbate@triumf-ml1.phas.ubc.ca'
+alias cedar='echo "Not set up yet."'
+alias triumf_t3='echo "Not set up yet."'
+alias python='python3'
+alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
+
 # Note socket path is TMUX
 echo "TMUX sessions configured to folder: ${TMUX_TMPDIR}"
 echo "TMUX socket: ${TMUX}"
@@ -11,6 +19,10 @@ export TERM=xterm-256color
 echo "TERM=${TERM}"
 echo ""
 
+# Languages
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+#
 # Add local builds to the path
 export PATH=$HOME/local/bin:$PATH
 # for some reason some builds are in bin bin
@@ -19,8 +31,9 @@ export PATH=$HOME/.local/bin:$PATH
 
 export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 export MANPATH=$HOME/.local/share/man:$MANPATH
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+
+# For Rust
+export PATH=$HOME/.cargo/bin:$PATH
 
 #=============================================================================#
 
@@ -142,3 +155,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+. "$HOME/.cargo/env"
+

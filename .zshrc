@@ -104,12 +104,16 @@ source $ZSH/oh-my-zsh.sh
 ## RUSSELL COMPONENT ##
 #######################
 #=============================================================================#
+# Plugins
+plugins=(... rust)
+
 alias nv=~/sandbox/nvim.appimage
 alias lx='ssh rbate@lxplus.cern.ch'
 alias triumf='ssh russbate@triumf-ml1.phas.ubc.ca'
 alias cedar='echo "Not set up yet."'
 alias triumf_t3='echo "Not set up yet."'
 alias python='python3'
+alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
 
 # for screen color with tmux
 export TERM=xterm-256color
@@ -127,6 +131,8 @@ export PATH=$HOME/local/bin/bin:$PATH
 # same for .local
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/bin/bin:$PATH
+# For Rust
+export PATH=$HOME/.cargo/bin:$PATH
 
 #=============================================================================#
 

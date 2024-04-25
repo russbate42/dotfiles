@@ -5,6 +5,7 @@ cmake
 cmdtest
 compizconfig-settings-manager
 cppcheck
+curl
 dkms
 dpkg-dev
 emacs
@@ -15,7 +16,7 @@ g++
 gcc
 gh
 git
-latexmk
+grip
 libssl-dev
 libx11-dev
 libxext-dev
@@ -58,11 +59,12 @@ node-transformers
 nomacs
 nux-tools
 okular
+python3-pip
 ripgrep
 screen
 sublime-text
 sumatra
-texlive-latex-extra
+texlive
 tmux
 tree
 unity

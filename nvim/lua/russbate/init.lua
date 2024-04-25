@@ -1,5 +1,6 @@
 
 print("hello from russbate")
+print("For spelling type >>> :setlocal spell spelllang=en_us")
 
 require("russbate.remap")
 require("russbate.set")
@@ -14,6 +15,30 @@ vim.cmd([[colorscheme gruvbox]])
 
 -- NVIM MARKDOWN
 vim.g.vim_markdown_no_default_key_mappings = 1
+
+-- LineWrapping (soft only)
+-- vim.opt.number #
+--[[vim.opt.textwidth=0
+vim.opt.wrapmargin=0
+vim.opt.wrap
+-- vim.opt.linebreak=80
+vim.opt.columns=80]]
+
+-- LINEWRAPPING (soft-wrap window)
+--[[vim.opt.number -- (optional - will help to visually verify that it's working)
+vim.opt.textwidth=0
+vim.opt.wrapmargin=0
+vim.opt.wrap
+vim.opt.linebreak -- (optional - breaks by word rather than character)
+]]
+
+-- LINEWRAPPING (hard-wrap)
+--[[vim.opt.number -- (optional - will help to visually verify that it's working)
+vim.opt.textwidth=80
+vim.opt.wrapmargin=0
+vim.opt.formatoptions+=t
+vim.opt.linebreak -- (optional - breaks by word rather than character)
+]]
 
 -- FOR LUASNIPS
 vim.cmd([[

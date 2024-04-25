@@ -65,6 +65,10 @@ return require('packer').startup(function(use)
 
   use {'ixru/nvim-markdown'}
 
+  use {'wfxr/minimap.vim',
+      as = 'minimap',
+  }
+
   -- I don't think vim-snippets and luasnip/ultisnips is necessary
   -- use {'honza/vim-snippets'}
 

@@ -10,6 +10,8 @@ echo "cp /etc/skel/.zshrc ~/"
 cp /etc/skel/.zshrc ~/
 echo "rm ../.tmux.conf"
 rm ~/.tmux.conf
+echo "rm -r ~/.tmux"
+rm -r ~/.tmux
 echo "rm ../.vimrc"
 rm ~/.vimrc
 echo "rm ../.screenrc"

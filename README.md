@@ -1,6 +1,48 @@
 # dotfiles
 A repository for config files for various software tools for both remote machines and local machines.
 
+## Navigation
+### NeoVim
+*MiniMap*
+ - :Minimap opens the map
+ - :MinimapClose closes the map
+*LuaSnip*
+ - Tab expands the luasnips
+ - 
+*VimTex*
+ - placeholder
+*Telescope*
+ - remap.lua
+ - " "pf uses fuzzy finder to search files
+ - " "ps uses ripgrep to search
+*Packer*
+ - :PackerUpdate updates packages
+ - :PackerSync syncs packages
+*Autoclose*
+ - No remaps
+*Nvim Markdown*
+ - placeholder
+ 
+### TMux
+ - Ctrl-b as a prefix
+ - Ctrl-g as a nested prefix (only two levels)
+ - Ctrl-Shift <arrow> to move between panes
+ - Ctrl-Shift-alt <arrow> to move between windows
+ - :rew renames window
+ - :res renames session
+ - [ ] vim key bindings in copy mode pending
+
+## TMUX
+### Package Manager
+https://github.com/tmux-plugins/tpm
+
+### Plugins
+tmux-yank
+[ ] tmux-copycat (not yet)
+
+## Rust
+
+
 ## LaTeX
 Assuming the installation on Ubuntu is:
 sudo apt-get install texlive

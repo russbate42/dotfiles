@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/russbate/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  minimap = {
+    loaded = true,
+    path = "/home/russbate/.local/share/nvim/site/pack/packer/start/minimap",
+    url = "https://github.com/wfxr/minimap.vim"
+  },
   ["nvim-markdown"] = {
     loaded = true,
     path = "/home/russbate/.local/share/nvim/site/pack/packer/start/nvim-markdown",
