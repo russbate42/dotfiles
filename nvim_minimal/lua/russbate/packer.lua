@@ -61,6 +61,18 @@ return require('packer').startup(function(use)
 
   use {'m4xshen/autoclose.nvim'}
 
+  use {'wfxr/minimap.vim',
+       as = 'minimap',
+  }
+
+  use {"nvim-lua/plenary.nvim"}
+
+  use {'ThePrimeagen/harpoon',
+    branch = "harpoon2",
+    requires = {  {
+        "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim"
+    }  }
+  }
   -- NVIM TREE, for now leave this out as we will just use netrw
   -- use { 'nvim-tree/nvim-tree.lua' }
 

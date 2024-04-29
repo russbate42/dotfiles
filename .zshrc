@@ -167,6 +167,9 @@ echo "For remote port forwarding in a new terminal type"
 echo "ssh -R 52698:127.0.0.1:52698 rbate@${HOSTNAME} -N -f"
 echo ""
 
+echo "rm -f .zcompdump-lxplus*"
+rm -f .zcompdump-lxplus*
+
 # SET EOS DIRECTORY
 EOS_DIR=/eos/user/r/rbate
 
@@ -175,9 +178,24 @@ alias fh='find $(pwd)/'
 alias goeos="cd ${EOS_DIR} && ls -lah"
 alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
 alias nv="~/sandbox/nvim.appimage"
+alias lsah='ls -lah'
+alias lsa='ls -la'
+alias lsh='ls -lh'
+alias lh='ls -lh'
 alias cm="du -sh -- * | sort -h"
 alias cma="du -h -- * | sort -h"
 alias gs="git status"
+alias lcgenvATLAS='echo "setting up LCG_104c_ATLAS_6 el-9 gcc" && \
+    lsetup "lcgenv -p LCG_104c_ATLAS_6 x86_64-el9-gcc13-opt gcc"'
+alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
+
+function lcgv() {
+    setupATLAS
+    lsetup "views LCG_104c_ATLAS_6 x86_64-el9-gcc13-opt"
+    printf "\n\tRunning: LCG_104c_ATLAS_6\n"
+    printf "\tUsing: $(python --version)\n"
+    printf "\n"
+}
 
 function checkmem() {
 	if [ -z "$1" ]
@@ -188,15 +206,21 @@ function checkmem() {
     fi
 }
 
-## TMUX
-alias tmux="tmux -u"
-
-# configure tmux socket
-export TMUX_TMPDIR=/tmp/$USER/
-# Note socket path is TMUX
-echo "TMUX sessions configured to folder: ${TMUX_TMPDIR}"
-echo "TMUX socket: ${TMUX}"
-echo ""
+function printalias(){
+printf 'fh
+goeos
+cleanshell
+nv
+lsah
+lsa
+lsh
+cm
+cma
+gs
+lcgenvATLAS
+cleannvim'
+printf "\n"
+}
 
 # for screen color with tmux
 export TERM=xterm-256color
@@ -207,6 +231,8 @@ echo ""
 export PATH=$HOME/local/bin:$PATH
 # for some reason some builds are in bin bin
 export PATH=$HOME/local/bin/bin:$PATH
+# For Rust
+export PATH=$HOME/.cargo/bin:$PATH
 
 ## FUNCTIONS
 ktmux(){
