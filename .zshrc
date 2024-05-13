@@ -70,7 +70,6 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +105,10 @@ source $ZSH/oh-my-zsh.sh
 #=============================================================================#
 # Plugins
 plugins=(... rust)
+plugins=(git)
+
+# Vim mode hopefully 
+set -o vi
 
 alias nv=~/sandbox/nvim.appimage
 alias lx='ssh rbate@lxplus.cern.ch'
@@ -114,6 +117,12 @@ alias cedar='echo "Not set up yet."'
 alias triumf_t3='echo "Not set up yet."'
 alias python='python3'
 alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
+alias tmuxu='tmux new-session -s R-Ubuntu'
+alias lsd='ls -ld */'
+alias lsah='ls -lah'
+alias lsda='ls -lda */'
+alias lsf='find . -maxdepth 1 -type f'
+alias gst='git status'
 
 # for screen color with tmux
 export TERM=xterm-256color

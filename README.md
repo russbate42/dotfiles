@@ -31,6 +31,8 @@ A repository for config files for various software tools for both remote machine
  - :rew renames window
  - :res renames session
  - [ ] vim key bindings in copy mode pending
+ - C-b r reloads tmux conf
+ - C-b S-I installs tpm plugins
 
 ## TMUX
 ### Package Manager

@@ -1,8 +1,33 @@
 # Description For Russell's Neovim Config
 
-## Hotkey guide
+## Motions
+
+## Hotkey and Command Overview
+### Remaps
+leader = " "
+Netrw: <leader>pv
+
+### Package Manager: Packer
+:PackerSync updates all packages
+
+### Telescope
+Ripgrep Search: <leader>ps
+Fuzzy finder: <leader>pf
+
+### Treesitter
+If there is an issue with tree-sitter try:
+    :TSUpdate or :TSUpdateSync
+
+### Minimap
 :Minimap opens minimap
 :MinimapClose closes minimap
+
+### VimTex Quick Commands
+:VimtexCompile
+:VimtexView
+Compile: <leader>lc
+View: <leader>lv
+Compile and View: <leader>ll
 
 ## Necessary Linux Packages
  - ripgrep
