@@ -7,6 +7,12 @@
 leader = " "
 Netrw: <leader>pv
 
+### Markdown Composer
+
+- :ComposerStart Start the preview server
+- :ComposerOpen Opens a new broser window containing the markdown preview.
+- :help markdown-composer
+
 ### Package Manager: Packer
 :PackerSync updates all packages
 
@@ -14,9 +20,21 @@ Netrw: <leader>pv
 Ripgrep Search: <leader>ps
 Fuzzy finder: <leader>pf
 
+### Harpoon2
+
+- Add files: <leader>add
+- Add files: <leader>add
+- Cycle left: Ctrl-t
+- Cycle right: Ctrl-p
+- Select files hotkeys: Ctrl-y/u/i/o (files 1-4)
+
 ### Treesitter
 If there is an issue with tree-sitter try:
-    :TSUpdate or :TSUpdateSync
+
+:TSUpdate or :TSUpdateSync
+
+For LaTeX syntax highlighting, the tree-sitter cli is required
+This can be installed with rust: cargo install tree-sitter-cli
 
 ### Minimap
 :Minimap opens minimap
@@ -37,6 +55,9 @@ Compile and View: <leader>ll
  - - python3 -m pip install --user --upgrade pynvim
  - code-minimap
  - - can be installed with cargo install --locked code-minimap
+
+## Extra Linux Packages
+ - tree-sitter-cli
 
 ## Tools
 ### Search - " ps"

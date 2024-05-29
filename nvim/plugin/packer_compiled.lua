@@ -172,6 +172,11 @@ _G.packer_plugins = {
     path = "/home/russbate/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-markdown-composer"] = {
+    loaded = true,
+    path = "/home/russbate/.local/share/nvim/site/pack/packer/start/vim-markdown-composer",
+    url = "https://github.com/euclio/vim-markdown-composer"
+  },
   vimtex = {
     loaded = true,
     path = "/home/russbate/.local/share/nvim/site/pack/packer/start/vimtex",

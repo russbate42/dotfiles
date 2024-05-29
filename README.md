@@ -3,25 +3,44 @@ A repository for config files for various software tools for both remote machine
 
 ## Navigation
 ### NeoVim
-*MiniMap*
- - :Minimap opens the map
- - :MinimapClose closes the map
-*LuaSnip*
- - Tab expands the luasnips
- - 
-*VimTex*
- - placeholder
-*Telescope*
- - remap.lua
- - " "pf uses fuzzy finder to search files
- - " "ps uses ripgrep to search
-*Packer*
- - :PackerUpdate updates packages
- - :PackerSync syncs packages
-*Autoclose*
- - No remaps
-*Nvim Markdown*
- - placeholder
+
+**MiniMap**
+
+- :Minimap opens the map
+- :MinimapClose closes the map
+
+**LuaSnip**
+
+- Tab expands the luasnips
+- 
+
+**VimTex**
+
+- placeholder
+
+**Telescope**
+
+- remap.lua
+- " "pf uses fuzzy finder to search files
+- " "ps uses ripgrep to search
+
+**Packer**
+
+- :PackerUpdate updates packages
+- :PackerSync syncs packages
+
+**Autoclose**
+
+- No remaps
+
+**Nvim Markdown**
+
+- placeholder
+
+**TreeSitter**
+
+- requires treesitter cli for latex
+- cargo install tree-sitter-cli
  
 ### TMux
  - Ctrl-b as a prefix

@@ -123,6 +123,8 @@ alias lsah='ls -lah'
 alias lsda='ls -lda */'
 alias lsf='find . -maxdepth 1 -type f'
 alias gst='git status'
+alias lspy='ls -l *.py'
+alias py='python'
 
 # for screen color with tmux
 export TERM=xterm-256color

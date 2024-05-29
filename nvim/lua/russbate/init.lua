@@ -16,6 +16,12 @@ vim.cmd([[colorscheme gruvbox]])
 -- NVIM MARKDOWN
 vim.g.vim_markdown_no_default_key_mappings = 1
 
+-- VIM-MARKDOWN-COMPOSER
+vim.g.markdown_composer_autostart = 0
+vim.g.markdown_composer_open_browser = 0
+vim.g.markdown_composer_external_renderer = 'okular'
+vim.g.markdown_composer_refresh_rate = 200
+
 -- LineWrapping (soft only)
 -- vim.opt.number #
 --[[vim.opt.textwidth=0

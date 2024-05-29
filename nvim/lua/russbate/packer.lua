@@ -94,6 +94,8 @@ return require('packer').startup(function(use)
       }
   }
 
+  use {'euclio/vim-markdown-composer'}
+
   -- I don't think vim-snippets and luasnip/ultisnips is necessary
   -- use {'honza/vim-snippets'}
 
