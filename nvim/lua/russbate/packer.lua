@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use { "nvim-treesitter/nvim-treesitter" , {run = ':TSUpdate'}} 
+  use { "nvim-treesitter/nvim-treesitter" , run = ':TSUpdate'} 
 
   use { "nvim-treesitter/playground" }
 
@@ -53,8 +53,6 @@ return require('packer').startup(function(use)
 
   use {'m4xshen/autoclose.nvim'}
 
---  use {'SirVer/ultisnips'}
-
   use ({
       'L3MON4D3/LuaSnip',
       -- follow latest release.
@@ -62,8 +60,6 @@ return require('packer').startup(function(use)
       -- install jsregexp (optional!:).
       run = "make install_jsregexp"
   })
-
-  use {'ixru/nvim-markdown'}
 
   use {'wfxr/minimap.vim',
       as = 'minimap',
@@ -93,6 +89,15 @@ return require('packer').startup(function(use)
           {'L3MON4D3/LuaSnip'},
       }
   }
+
+  -- install without yarn or npm
+  use({
+	  "iamcco/markdown-preview.nvim",
+	  run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+	setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- I don't think vim-snippets and luasnip/ultisnips is necessary
   -- use {'honza/vim-snippets'}

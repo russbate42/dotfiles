@@ -13,9 +13,6 @@ require("nvim-surround").setup()
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
--- NVIM MARKDOWN
-vim.g.vim_markdown_no_default_key_mappings = 1
-
 -- LineWrapping (soft only)
 -- vim.opt.number #
 --[[vim.opt.textwidth=0
@@ -64,17 +61,15 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   store_selection_keys = "<Tab>",
 })
 
-
-
 -- FOR MARKDOWN PREVIEW
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
 -- default: 0
--- vim.g.mkdp_auto_start = 0
+vim.g.mkdp_auto_start = 0
 
 -- set to 1, the nvim will auto close current preview window when changing
 -- from Markdown buffer to another buffer
 -- default: 1
--- vim.g.mkdp_auto_close = 1
+vim.g.mkdp_auto_close = 0
 
 -- set to 1, Vim will refresh Markdown when saving the buffer or
 -- when leaving insert mode. Default 0 is auto-refresh Markdown as you edit or
@@ -128,21 +123,21 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 -- sequence_diagrams: js-sequence-diagrams options
 -- content_editable: if enable content editable for preview page, default: v:false
 -- disable_filename: if disable filename header for preview page, default: 0
--- vim.cmd([[let g:mkdp_preview_options = {
---     \ 'mkit': {},
---     \ 'katex': {},
---     \ 'uml': {},
---     \ 'maid': {},
---     \ 'disable_sync_scroll': 0,
---     \ 'sync_scroll_type': 'middle',
---     \ 'hide_yaml_meta': 1,
---     \ 'sequence_diagrams': {},
---     \ 'flowchart_diagrams': {},
---     \ 'content_editable': v:false,
---     \ 'disable_filename': 0,
---     \ 'toc': {}
---     \ }
--- ]])
+vim.cmd([[let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0,
+    \ 'toc': {}
+    \ }
+]])
 
 -- use a custom Markdown style. Must be an absolute path
 -- like '/Users/username/markdown.css' or expand('~/markdown.css')
