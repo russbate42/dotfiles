@@ -125,6 +125,40 @@ alias lsf='find . -maxdepth 1 -type f'
 alias gst='git status'
 alias lspy='ls -l *.py'
 alias py='python'
+alias cm="du -sh -- * | sort -h"
+alias cma="du -h -- * | sort -h"
+alias fh='find $(pwd)/'
+
+function checkmem() {
+	if [ -z "$1" ]
+    then
+		du -h | sort -h
+	else
+		du -h ./$1 | sort -h
+    fi
+}
+
+function printalias(){
+printf 'fh
+nv
+lx
+triumf
+cedar
+triumf_t3
+python
+cleannvim
+tmuxu
+lsd
+lsah
+lsda
+lsf
+gst
+lspy
+py
+cm
+cma'
+printf "\n"
+}
 
 # for screen color with tmux
 export TERM=xterm-256color

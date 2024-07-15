@@ -25,6 +25,12 @@ Need to remap scrolling because the editor for
  - - Hit space pv
  - - Hit space pf
 
+## Wish List
+coc.nvim
+coc.vimtex
+oil.nvim
+vim commentary
+
 ## Plugins
 
 ### Package Manager: Packer
@@ -46,9 +52,7 @@ Stop the preview
 
 ### nvim-surround
 
-### autoclose
-
-### telescope
+### Autoclose
 
 ### Telescope
 Ripgrep Search: <leader>ps
