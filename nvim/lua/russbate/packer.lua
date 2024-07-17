@@ -99,14 +99,12 @@ return require('packer').startup(function(use)
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
 	setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
+
+  use {'hrsh7th/nvim-cmp'}
+
+
   -- I don't think vim-snippets and luasnip/ultisnips is necessary
   -- use {'honza/vim-snippets'}
-
-  -- install without yarn or npm
-  -- use({
-  --     "iamcco/markdown-preview.nvim",
-  --     run = function() vim.fn["mkdp#util#install"]() end,
-  -- })
 
   -- NVIM TREE, for now leave this out as we will just use netrw
   -- use { 'nvim-tree/nvim-tree.lua' }

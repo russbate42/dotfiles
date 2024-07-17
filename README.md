@@ -1,6 +1,9 @@
 # dotfiles
 A repository for config files for various software tools for both remote machines and local machines.
 
+## Current Work
+Working on configuration for luasnips with latex and nvim complete
+
 ## Navigation
 ### NeoVim
 

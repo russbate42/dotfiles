@@ -13,30 +13,6 @@ require("nvim-surround").setup()
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
--- LineWrapping (soft only)
--- vim.opt.number #
---[[vim.opt.textwidth=0
-vim.opt.wrapmargin=0
-vim.opt.wrap
--- vim.opt.linebreak=80
-vim.opt.columns=80]]
-
--- LINEWRAPPING (soft-wrap window)
---[[vim.opt.number -- (optional - will help to visually verify that it's working)
-vim.opt.textwidth=0
-vim.opt.wrapmargin=0
-vim.opt.wrap
-vim.opt.linebreak -- (optional - breaks by word rather than character)
-]]
-
--- LINEWRAPPING (hard-wrap)
---[[vim.opt.number -- (optional - will help to visually verify that it's working)
-vim.opt.textwidth=80
-vim.opt.wrapmargin=0
-vim.opt.formatoptions+=t
-vim.opt.linebreak -- (optional - breaks by word rather than character)
-]]
-
 -- FOR LUASNIPS
 vim.cmd([[
 " Expand or jump in insert mode
@@ -52,6 +28,7 @@ smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '
 ]])
 
 require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
+require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/tex"})
 require("luasnip").config.set_config({ -- Setting LuaSnip config
 
   -- Enable autotriggered snippets
@@ -174,6 +151,31 @@ vim.cmd([[let g:mkdp_preview_options = {
 -- auto refetch combine preview contents when change markdown buffer
 -- only when g:mkdp_combine_preview is 1
 -- vim.g.mkdp_combine_preview_auto_refresh = 1
+
+-- LineWrapping (soft only)
+-- vim.opt.number #
+--[[vim.opt.textwidth=0
+vim.opt.wrapmargin=0
+vim.opt.wrap
+-- vim.opt.linebreak=80
+vim.opt.columns=80]]
+
+-- LINEWRAPPING (soft-wrap window)
+--[[vim.opt.number -- (optional - will help to visually verify that it's working)
+vim.opt.textwidth=0
+vim.opt.wrapmargin=0
+vim.opt.wrap
+vim.opt.linebreak -- (optional - breaks by word rather than character)
+]]
+
+-- LINEWRAPPING (hard-wrap)
+--[[vim.opt.number -- (optional - will help to visually verify that it's working)
+vim.opt.textwidth=80
+vim.opt.wrapmargin=0
+vim.opt.formatoptions+=t
+vim.opt.linebreak -- (optional - breaks by word rather than character)
+]]
+
 
 -- FOR NEOVIM TREE
 -- disable netrw at the very start of your init.lua
