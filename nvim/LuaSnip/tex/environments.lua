@@ -32,11 +32,6 @@ return {
     { strict = false }
   )),
 
-  s("physics", fmta([[$E = mc^2 <>$]],
-    { i(1) },
-    { strict = true }
-  )),
-
   s("tabular", fmta([[
     \begin{tabular}{ c c c }
      <> &  &  \\ 

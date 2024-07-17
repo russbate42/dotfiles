@@ -38,6 +38,9 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   store_selection_keys = "<Tab>",
 })
 
+-- NVIM CMP
+require("russbate.nvim-cmp")
+
 -- FOR MARKDOWN PREVIEW
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
 -- default: 0
