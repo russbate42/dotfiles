@@ -97,6 +97,8 @@ return require('packer').startup(function(use)
 
   use { 'saadparwaiz1/cmp_luasnip' }
   
+  use { 'xiyaowong/transparent.nvim' }
+
   -- NVIM TREE, for now leave this out as we will just use netrw
   -- use { 'nvim-tree/nvim-tree.lua' }
 

@@ -26,10 +26,10 @@ Need to remap scrolling because the editor for
  - - Hit space pf
 
 ## Wish List
-coc.nvim
-coc.vimtex
 oil.nvim
 vim commentary
+rainbow delimeters
+lukas-reineke/indent-blankline.nvim
 
 ## Plugins
 
@@ -76,6 +76,15 @@ This can be installed with rust: cargo install tree-sitter-cli
 ### Minimap
 :Minimap opens minimap
 :MinimapClose closes minimap
+
+### Transparent
+:TransparentEnable
+:TransparentDisable
+:TransparentToggle
+
+### nvim-cmp
+A completion engine plugin for neovim written in Lua.
+Completion sources are installed from external repositories and sourced.
 
 ### LuaSnip
 See Below

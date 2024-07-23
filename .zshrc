@@ -128,6 +128,7 @@ alias py='python'
 alias cm="du -sh -- * | sort -h"
 alias cma="du -h -- * | sort -h"
 alias fh='find $(pwd)/'
+alias gitgraph='git log --graph --pretty=oneline --abbrev-commit'
 
 function checkmem() {
 	if [ -z "$1" ]

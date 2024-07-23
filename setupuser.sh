@@ -27,7 +27,10 @@ ln -s -T dotfiles/.screenrc .screenrc
 echo "ln -s -T dotfiles/.gitconfig .gitconfig"
 ln -s -T dotfiles/.gitconfig .gitconfig
 
-printf "\nsetting up neovim.."
+printf "\n\nsetting up Alacritty"
+cp -rsT ~/dotfiles/alacritty ~/.config/alacritty
+
+printf "\n\nsetting up neovim.."
 #echo "searching for neovim in ~/sandbox/"
 #if [[ -f ~/sandbox/nvim.appimage ]] then
 #    else if:

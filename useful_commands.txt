@@ -8,4 +8,6 @@ zgrep 'Commandline: apt' /var/log/apt/history.log /var/log/apt/history.log.*.gz
 # This relates to tmux configuration defaults
 #============================================
 tmux show-options -g
+tmux swap-window -s 2 -t 1 # for source and target
+tmux move-window 
 
