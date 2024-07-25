@@ -173,21 +173,31 @@ rm -f .zcompdump-lxplus*
 # SET EOS DIRECTORY
 EOS_DIR=/eos/user/r/rbate
 
+# VIM MODE
+set -o vi
+
 ## ALIASES
-alias fh='find $(pwd)/'
+alias fh='find $(pwd) -maxdepth 1'
 alias goeos="cd ${EOS_DIR} && ls -lah"
 alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
 alias nv="~/sandbox/nvim.appimage"
-alias lsah='ls -lah'
 alias lsa='ls -la'
 alias lsh='ls -lh'
 alias lh='ls -lh'
+alias ll='ls -l'
+alias lspy='ls -l *.py'
 alias cm="du -sh -- * | sort -h"
 alias cma="du -h -- * | sort -h"
-alias gs="git status"
 alias lcgenvATLAS='echo "setting up LCG_104c_ATLAS_6 el-9 gcc" && \
     lsetup "lcgenv -p LCG_104c_ATLAS_6 x86_64-el9-gcc13-opt gcc"'
 alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
+alias lsd='ls -ld */'
+alias lsah='ls -lah'
+alias lsda='ls -lda */'
+alias lsf='find . -maxdepth 1 -type f'
+alias gst='git status'
+alias py='python'
+alias voms='voms-proxy-init -voms atlas'
 
 function lcgv() {
     setupATLAS

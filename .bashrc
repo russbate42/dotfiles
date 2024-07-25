@@ -72,15 +72,20 @@ alias nv="~/sandbox/nvim.appimage"
 alias cm="du -sh -- * | sort -h"
 alias cma="du -h -- * | sort -h"
 alias gs="git status"
+alias lxtm="systemctl --user start tmux.service && tmux a"
 
 ## TMUX
 alias tmux='tmux -u'
 
 # configure tmux socket
-export TMUX_TMPDIR=/tmp/$USER/
+#export TMUX_TMPDIR=/tmp/$USER/
+
 # Note socket path is TMUX
 echo "TMUX sessions configured to folder: ${TMUX_TMPDIR}"
 echo "TMUX socket: ${TMUX}"
+echo "TMUX sessions:"
+tmux ls
+echo "To start a new session type lxtm"
 echo ""
 
 # for screen color with tmux
@@ -118,6 +123,15 @@ ktmux_zsh(){
 }
 
 tmux_zsh(){
+    if [[ -z "$1" ]]; then
+        SHELL=/usr/bin/zsh tmux new-session
+    else
+        SHELL=/usr/bin/zsh tmux new-session -s $1
+    fi
+}
+
+tmux_zp(){
+    systemct1 --user start tmux.service
     if [[ -z "$1" ]]; then
         SHELL=/usr/bin/zsh tmux new-session
     else
