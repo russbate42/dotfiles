@@ -28,8 +28,9 @@ Need to remap scrolling because the editor for
 ## Wish List
 oil.nvim
 vim commentary
-rainbow delimeters
-lukas-reineke/indent-blankline.nvim
+zen mode
+twilight
+vim tmux navigator
 
 ## Plugins
 

@@ -99,6 +99,10 @@ return require('packer').startup(function(use)
   
   use { 'xiyaowong/transparent.nvim' }
 
+  use { 'HiPhish/rainbow-delimiters.nvim' }
+
+  use { 'lukas-reineke/indent-blankline.nvim' }
+
   -- NVIM TREE, for now leave this out as we will just use netrw
   -- use { 'nvim-tree/nvim-tree.lua' }
 

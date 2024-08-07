@@ -41,6 +41,62 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 -- NVIM CMP
 require("russbate.nvim-cmp")
 
+-- RAINBOW DELIMETERS
+-- This module contains a number of default definitions
+local rainbow_delimiters = require('rainbow-delimiters')
+
+---@type rainbow_delimiters.config
+vim.g.rainbow_delimiters = {
+    strategy = {
+        [''] = rainbow_delimiters.strategy['global'],
+        vim = rainbow_delimiters.strategy['local'],
+    },
+    query = {
+        [''] = 'rainbow-delimiters',
+        lua = {'rainbow-blocks', 'rainbow-delimeters'},
+        latex = {'rainbow-blocks', 'rainbow-delimeters'},
+    },
+    priority = {
+        [''] = 110,
+        lua = 210,
+    },
+    highlight = {
+        'RainbowDelimiterOrange',
+        'RainbowDelimiterCyan',
+        'RainbowDelimiterRed',
+        'RainbowDelimiterYellow',
+        'RainbowDelimiterGreen',
+        'RainbowDelimiterBlue',
+        'RainbowDelimiterViolet',
+    },
+}
+
+-- INDENT BLANKLINE
+-- see :help ibl
+require("ibl").setup()
+require "ibl".overwrite {
+    enabled = true,
+    exclude = { filetypes = {} },
+    scope = {
+        enabled = true,
+        show_start = true,
+        show_end = false,
+        injected_languages = false,
+        highlight = { "Function", "Label", "Conditional", "Keyword",
+            "Exception", "pythonConditional"},
+        priority = 500,
+    },
+    -- indent = {
+       -- char = "|",
+       -- tab_char = { "a", "b", "c" },
+       -- highlight = { "Conditional" },
+       -- smart_indent_cap = true,
+       -- priority = 2,
+       -- repeat_linebreak = false,
+    --}
+}
+
+
 -- FOR MARKDOWN PREVIEW
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
 -- default: 0

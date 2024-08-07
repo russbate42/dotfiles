@@ -30,6 +30,9 @@ ln -s -T dotfiles/.gitconfig .gitconfig
 printf "\n\nsetting up Alacritty"
 cp -rsT ~/dotfiles/alacritty ~/.config/alacritty
 
+printf "\n\nsetting up Zathura"
+cp -rsT ~/dotfiles/zathura ~/.config/zathura
+
 printf "\n\nsetting up neovim.."
 #echo "searching for neovim in ~/sandbox/"
 #if [[ -f ~/sandbox/nvim.appimage ]] then
