@@ -113,27 +113,27 @@ source $ZSH/oh-my-zsh.sh
 ##############################
 
 # Source global definitions
-#if [ -f /etc/zshrc ]; then
-#	. /etc/zshrc
-#
-#fi
-#
-## check if shell is in noninteractive
-#if [ -z "$PS1" ]; then
-#    # prompt var is not set, so this is *not* an interactive shell
-#    return
-#fi
+if [ -f /etc/zshrc ]; then
+	. /etc/zshrc
+fi
+
+# check if shell is in noninteractive
+if [ -z "$PS1" ]; then
+    # prompt var is not set, so this is *not* an interactive shell
+    return
+else
+    # Uncomment the following line if you don't like systemctl's auto-paging feature:
+    # export SYSTEMD_PAGER=
+
+    # User specific aliases and functions
+    echo "RUCIO_ACCOUNT=rbate"
+    export RUCIO_ACCOUNT=rbate
+fi
 
 ###########################
 ## INTERACTIVE COMPONENT ##
 ###########################
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-# echo "RUCIO_ACCOUNT=rbate"
-# export RUCIO_ACCOUNT=rbate
 # echo "ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022"
 # export ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022
 # echo "KRB5_CONFIG=$ATLAS_LOCAL_ROOT_BASE/user/krb5.conf"
@@ -158,7 +158,7 @@ if [[ "$PYTHON_VERSION" == "Python 2."* ]]; then
 else
 	echo ""
 	echo "Python version configured to"
-	python -V
+	python3 -V
 	echo ""
 fi
 
@@ -177,60 +177,7 @@ EOS_DIR=/eos/user/r/rbate
 set -o vi
 
 ## ALIASES
-alias fh='find $(pwd) -maxdepth 1'
-alias goeos="cd ${EOS_DIR} && ls -lah"
-alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
-alias nv="~/sandbox/nvim.appimage"
-alias lsa='ls -la'
-alias lsh='ls -lh'
-alias lh='ls -lh'
-alias ll='ls -l'
-alias lspy='ls -l *.py'
-alias cm="du -sh -- * | sort -h"
-alias cma="du -h -- * | sort -h"
-alias lcgenvATLAS='echo "setting up LCG_104c_ATLAS_6 el-9 gcc" && \
-    lsetup "lcgenv -p LCG_104c_ATLAS_6 x86_64-el9-gcc13-opt gcc"'
-alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
-alias lsd='ls -ld */'
-alias lsah='ls -lah'
-alias lsda='ls -lda */'
-alias lsf='find . -maxdepth 1 -type f'
-alias gst='git status'
-alias py='python'
-alias voms='voms-proxy-init -voms atlas'
-
-function lcgv() {
-    setupATLAS
-    lsetup "views LCG_104c_ATLAS_6 x86_64-el9-gcc13-opt"
-    printf "\n\tRunning: LCG_104c_ATLAS_6\n"
-    printf "\tUsing: $(python --version)\n"
-    printf "\n"
-}
-
-function checkmem() {
-	if [ -z "$1" ]
-    then
-		du -h | sort -h
-	else
-		du -h ./$1 | sort -h
-    fi
-}
-
-function printalias(){
-printf 'fh
-goeos
-cleanshell
-nv
-lsah
-lsa
-lsh
-cm
-cma
-gs
-lcgenvATLAS
-cleannvim'
-printf "\n"
-}
+source ~/.aliases.sh
 
 # for screen color with tmux
 export TERM=xterm-256color

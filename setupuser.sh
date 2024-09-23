@@ -3,6 +3,7 @@ echo -e "\nSetting up sym links\n"
 cd ~
 echo -e "In directory ~/\n"
 
+# bash and zsh
 echo "rm .bashrc"
 rm .bashrc
 echo "ln -s -T dotfiles/.bashrc .bashrc"
@@ -11,6 +12,10 @@ echo "rm .zshrc"
 rm .zshrc
 echo "ln -s -T dotfiles/.zshrc .zshrc"
 ln -s -T dotfiles/.zshrc .zshrc
+echo "ln -s -T dotfiles/.aliases.sh .aliases.sh"
+ln -s -T dotfiles/.aliases.sh .aliases.sh
+
+# tmux
 echo "ln -s -T dotfiles/.tmux.conf .tmux.conf"
 ln -s -T dotfiles/.tmux.conf .tmux.conf
 echo "ln -s -T dotfiles/.vimrc .vimrc"

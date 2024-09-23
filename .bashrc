@@ -14,18 +14,19 @@ fi
 if [ -z "$PS1" ]; then
     # prompt var is not set, so this is *not* an interactive shell
     return
+else
+    # uncomment the following line if you don't like systemctl's auto-paging feature:
+    # export systemd_pager=
+
+    # user specific aliases and functions
+    echo "rucio_account=rbate"
+    export rucio_account=rbate
 fi
 
 ###########################
 ## INTERACTIVE COMPONENT ##
 ###########################
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-# echo "RUCIO_ACCOUNT=rbate"
-# export RUCIO_ACCOUNT=rbate
 # echo "ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022"
 # export ALRB_TutorialData=/cvmfs/atlas.cern.ch/repo/tutorials/asg/cern-mar2022
 # echo "KRB5_CONFIG=$ATLAS_LOCAL_ROOT_BASE/user/krb5.conf"
@@ -35,13 +36,13 @@ fi
 
 # Python Configuration
 # scl enable rh-python38 bash --norc
-PYTHON_VERSION=$(python -V 2>&1) #Need to redirect, python -V goes to stderr(?)
+PYTHON_VERSION=$(python3 -V 2>&1) #Need to redirect, python -V goes to stderr(?)
 
 # basically if there is a two that shows up in the python version
 if [[ "$PYTHON_VERSION" == "Python 2."* ]]; then
 	echo ""
 	echo "Python version auto configured to"
-	python -V
+	python2 -V
 	echo ""
 	echo "to configure python version manually type scl enable rh-python* bash"
 	echo "current reccomendation at 2022-09-07 is rh-python38"
@@ -50,7 +51,7 @@ if [[ "$PYTHON_VERSION" == "Python 2."* ]]; then
 else
 	echo ""
 	echo "Python version configured to"
-	python -V
+	python3 -V
 	echo ""
 fi
 # Set up this switch to check for python, and if not but python3 is a command alias
@@ -65,17 +66,7 @@ echo ""
 EOS_DIR=/eos/user/r/rbate
 
 ## ALIASES
-alias fh="find $(pwd)/"
-alias goeos="cd ${EOS_DIR} && ls -lah"
-alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
-alias nv="~/sandbox/nvim.appimage"
-alias cm="du -sh -- * | sort -h"
-alias cma="du -h -- * | sort -h"
-alias gs="git status"
-alias lxtm="systemctl --user start tmux.service && tmux a"
-
-## TMUX
-alias tmux='tmux -u'
+source ~/.aliases.sh
 
 # configure tmux socket
 #export TMUX_TMPDIR=/tmp/$USER/
@@ -145,14 +136,6 @@ persist(){
     else
 		k5reauth -f -i 3600 -p $USER -k ~/private/$USER.keytab -- "$@"
         #k5reauth -f -i 3600 -p rbate -k /afs/cern.ch/user/r/rbate/.k5auth/rbate.keytab -- "$@"
-    fi
-}
-
-function checkmem() {
-	if [ -z "${1}" ]; then
-		du -h | sort -h
-	else
-		du -h ./$1 | sort -h
     fi
 }
 
