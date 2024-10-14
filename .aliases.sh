@@ -1,7 +1,9 @@
 #!/bin/bash
 
+EOS_DIR=/eos/user/r/$USER
+
 alias fh='find $(pwd) -maxdepth 1'
-alias goeos="cd ${eos_dir} && ls -lah"
+alias goeos="cd ${EOS_DIR} && ls -lah"
 alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
 alias nv="~/sandbox/nvim.appimage"
 alias lsa='ls -la'
@@ -23,6 +25,10 @@ alias py='python'
 alias voms='voms-proxy-init -voms atlas'
 alias gitgraph='git log --graph --pretty=oneline --abbrev-commit'
 alias tmux='tmux -u'
+alias lxtm="systemctl --user start tmux.service && tmux a"
+alias lsag="ls -lah | grep"
+alias lg="ls | grep"
+alias fg="find $(pwd) -maxdepth 1 | grep"
 
 function lcgv() {
     setupATLAS
@@ -64,6 +70,7 @@ gst
 py
 voms
 gitgraph
-tmux'
+tmux
+lxtm'
 printf "\n"
 }
