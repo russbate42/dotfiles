@@ -139,6 +139,17 @@ persist(){
     fi
 }
 
+# use this for logging
+if [[ -f ~/lxplus_login_history.txt ]]; then
+    echo "" >> ~/lxplus_login_history.txt
+    echo "$HOSTNAME $(date)" >> ~/lxplus_login_history.txt
+    echo "" >> ~/lxplus_login_history.txt
+else
+    echo "" > ~/lxplus_login_history.txt
+    echo "$HOSTNAME $(date)" >> ~/lxplus_login_history.txt
+    echo "" >> ~/lxplus_login_history.txt
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/afs/cern.ch/user/r/rbate/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"

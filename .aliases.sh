@@ -30,6 +30,10 @@ alias lsag="ls -lah | grep"
 alias lg="ls | grep"
 alias fg="find $(pwd) -maxdepth 1 | grep"
 
+function hidden() {
+    ls -a "$@" | grep '^\.';
+}
+
 function lcgv() {
     setupATLAS
     lsetup "views LCG_104c_ATLAS_6 x86_64-el9-gcc13-opt"

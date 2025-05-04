@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
 	  requires = "nvim-treesitter/nvim-treesitter",
   }
 
---[[
     use {
       "kylechui/nvim-surround",
       tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -49,7 +48,6 @@ return require('packer').startup(function(use)
           })
       end
   }
-]]
 
   use ({
       'L3MON4D3/LuaSnip',
@@ -73,6 +71,13 @@ return require('packer').startup(function(use)
         "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim"
     }  }
   }
+
+  use { 'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+
   -- NVIM TREE, for now leave this out as we will just use netrw
   -- use { 'nvim-tree/nvim-tree.lua' }
 

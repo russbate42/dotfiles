@@ -6,6 +6,7 @@ require("russbate.set")
 require("russbate.packer")
 --require("russbate.packer").startup(on_startup)
 require("autoclose").setup()
+require('Comment').setup()
 
 -- COLORS
 vim.o.background = "dark" -- or "light" for light mode
