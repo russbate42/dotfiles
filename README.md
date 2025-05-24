@@ -74,12 +74,22 @@ Install instructions: https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packa
 
 I have not used texlive-full for space reasons.
 To install specific packages, use the following instructions
-1) make the directory /usr/local/share/texmf/tex/latex
+1) make the directory ```/usr/local/share/texmf/tex/latex```
 2) Download the package from CTAN
-3) Use the command: unzip <package>.zip
- - Make sure the directory structure is /usr/local/share/texmf/tex/latex/<package>
-4) run latex to produce the .sty file in the package folder, if it already exists do nothing
-5) run the command: sudo texhash to install the package.
+
+    ```sudo curl -O https://mirrors.ctan.org/macros/latex/contrib/lipsum.zip```
+3) Use the command: ```unzip <package>.zip -d \<package_name\>```
+    - Make sure the directory structure is
+
+    ```/usr/local/share/texmf/tex/latex/\<package\>```
+4) run latex to on the ```package.ins``` file to produce the .sty file in the package folder, if it already exists do nothing
+
+    ```latex packagename.ins```
+5) run the command: ```sudo texhash``` to install the package.
 
 List of extra packages for my work:
 physics
+pgf
+import
+blindtext
+lipsum
