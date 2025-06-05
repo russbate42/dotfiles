@@ -6,6 +6,8 @@ echo "cp /etc/skel/.bashrc ~/"
 cp /etc/skel/.bashrc ~/
 echo "rm ../.zshrc"
 rm ~/.zshrc
+echo "rm ../.aliases"
+rm ~/.aliases
 echo "cp /etc/skel/.zshrc ~/"
 cp /etc/skel/.zshrc ~/
 echo "rm ../.tmux.conf"

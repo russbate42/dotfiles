@@ -93,3 +93,6 @@ pgf
 import
 blindtext
 lipsum
+silence
+lipsum
+wrapfig

@@ -11,6 +11,10 @@ rm .zshrc
 echo "ln -s -T dotfiles/.zshrc .zshrc"
 ln -s -T dotfiles/.zshrc .zshrc
 
+# Aliases
+echo "ln -s -T dotfiles/.zshrc .zshrc"
+ln -s -T dotfiles/aliases.sh .aliases.sh
+
 ## TMUX
 echo "Setting up TMUX"
 echo "ln -s -T dotfiles/.tmux.conf .tmux.conf"
@@ -27,13 +31,16 @@ ln -s -T dotfiles/.screenrc .screenrc
 echo "ln -s -T dotfiles/.gitconfig .gitconfig"
 ln -s -T dotfiles/.gitconfig .gitconfig
 
-printf "\n\nsetting up Alacritty"
+printf "\n\nsetting up Alacritty\n"
 cp -rsT ~/dotfiles/alacritty ~/.config/alacritty
 
-printf "\n\nsetting up Zathura"
+printf "\n\nsetting up Kitty\n"
+cp -rsT ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+
+printf "\n\nsetting up Zathura\n"
 cp -rsT ~/dotfiles/zathura ~/.config/zathura
 
-printf "\n\nsetting up neovim.."
+printf "\n\nsetting up neovim..\n"
 #echo "searching for neovim in ~/sandbox/"
 #if [[ -f ~/sandbox/nvim.appimage ]] then
 #    else if:
