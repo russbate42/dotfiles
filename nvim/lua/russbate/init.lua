@@ -1,13 +1,48 @@
 
 print("hello from russbate")
 print("For spelling type >>> :setlocal spell spelllang=en_us")
+print("To suppress VimTeX warnings type >>> :lua vim.g.vimtex_quickfix_mode = 0")
+print("")
 
 require("russbate.remap")
 require("russbate.set")
 require("russbate.packer")
---require("russbate.packer").startup(on_startup)
 require("autoclose").setup()
 require("nvim-surround").setup()
+
+-- LINE WRAP
+-- vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+--     pattern = "README*",
+--     callback = function()
+--         vim.bo.filetype = "markdown"
+--     end,
+-- })
+
+vim.api.nvim_create_autocmd("FileType",
+{
+    pattern = "tex",
+    callback = function()
+        -- Example configurations for .tex files
+        vim.opt.expandtab = true        -- Use spaces instead of tabs
+        vim.opt.shiftwidth = 2          -- Indent width
+        vim.opt.softtabstop = 2         -- Number of spaces for a tab
+        vim.opt.textwidth = 80          -- Wrap lines at 80 characters
+        vim.opt.spell = true            -- Enable spell checking
+        vim.opt.wrap = true             -- Enable line wrapping
+        vim.opt_local.conceallevel = 2  -- Enable text concealment
+    end,
+    pattern = "markdown",
+    callback = function()
+        -- Example configurations for .md files
+        vim.opt.expandtab = true        -- Use spaces instead of tabs
+        vim.opt.shiftwidth = 4          -- Indent width
+        vim.opt.softtabstop = 4         -- Number of spaces for a tab
+        vim.opt.textwidth = 80          -- Wrap lines at 80 characters
+        vim.opt.spell = true            -- Enable spell checking
+        vim.opt.wrap = true             -- Enable line wrapping
+        vim.opt_local.conceallevel = 2  -- Enable text concealment
+    end,
+})
 
 -- COLORS
 vim.o.background = "dark" -- or "light" for light mode
@@ -16,7 +51,7 @@ vim.cmd([[colorscheme gruvbox]])
 -- FOR LUASNIPS
 vim.cmd([[
 " Expand or jump in insert mode
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+" imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 
 " Use Tab to expand and jump through snippets
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
@@ -54,11 +89,13 @@ vim.g.rainbow_delimiters = {
     query = {
         [''] = 'rainbow-delimiters',
         lua = {'rainbow-blocks', 'rainbow-delimeters'},
-        latex = {'rainbow-blocks', 'rainbow-delimeters'},
+        latex = 'rainbow-blocks' 
+        -- latex = {'rainbow-blocks', 'rainbow-delimeters'},
     },
     priority = {
         [''] = 110,
         lua = 210,
+        latex = 400
     },
     highlight = {
         'RainbowDelimiterOrange',
@@ -74,28 +111,31 @@ vim.g.rainbow_delimiters = {
 -- INDENT BLANKLINE
 -- see :help ibl
 require("ibl").setup()
-require "ibl".overwrite {
-    enabled = true,
-    exclude = { filetypes = {} },
-    scope = {
-        enabled = true,
-        show_start = true,
-        show_end = false,
-        injected_languages = false,
-        highlight = { "Function", "Label", "Conditional", "Keyword",
-            "Exception", "pythonConditional"},
-        priority = 500,
-    },
-    -- indent = {
-       -- char = "|",
-       -- tab_char = { "a", "b", "c" },
-       -- highlight = { "Conditional" },
-       -- smart_indent_cap = true,
-       -- priority = 2,
-       -- repeat_linebreak = false,
-    --}
-}
+-- require "ibl".overwrite {
+--     enabled = true,
+--     exclude = { filetypes = {} },
+--     scope = {
+--         enabled = true,
+--         show_start = true,
+--         show_end = false,
+--         injected_languages = false,
+--         highlight = { "Function", "Label", "Conditional", "Keyword",
+--             "Exception", "pythonConditional"},
+--         priority = 500,
+--     },
+--     -- indent = {
+--        -- char = "|",
+--        -- tab_char = { "a", "b", "c" },
+--        -- highlight = { "Conditional" },
+--        -- smart_indent_cap = true,
+--        -- priority = 2,
+--        -- repeat_linebreak = false,
+--     --}
+-- }
 
+-- NVIM SURROUND
+
+-- COMMENT NVIM
 
 -- FOR MARKDOWN PREVIEW
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
@@ -211,14 +251,6 @@ vim.cmd([[let g:mkdp_preview_options = {
 -- only when g:mkdp_combine_preview is 1
 -- vim.g.mkdp_combine_preview_auto_refresh = 1
 
--- LineWrapping (soft only)
--- vim.opt.number #
---[[vim.opt.textwidth=0
-vim.opt.wrapmargin=0
-vim.opt.wrap
--- vim.opt.linebreak=80
-vim.opt.columns=80]]
-
 -- LINEWRAPPING (soft-wrap window)
 --[[vim.opt.number -- (optional - will help to visually verify that it's working)
 vim.opt.textwidth=0
@@ -234,32 +266,4 @@ vim.opt.wrapmargin=0
 vim.opt.formatoptions+=t
 vim.opt.linebreak -- (optional - breaks by word rather than character)
 ]]
-
-
--- FOR NEOVIM TREE
--- disable netrw at the very start of your init.lua
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
--- 
--- -- optionally enable 24-bit colour
--- vim.opt.termguicolors = true
--- 
--- -- empty setup using defaults
--- require("nvim-tree").setup()
--- 
--- -- OR setup with some options
--- require("nvim-tree").setup({
---   sort = {
---     sorter = "case_sensitive",
---   },
---   view = {
---     width = 30,
---   },
---   renderer = {
---     group_empty = true,
---   },
---   filters = {
---     dotfiles = true,
---   },
--- })
 

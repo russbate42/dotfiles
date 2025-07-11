@@ -41,15 +41,13 @@ return require('packer').startup(function(use)
 	  requires = "nvim-treesitter/nvim-treesitter",
   }
 
-  use {
-      "kylechui/nvim-surround",
+  use { "kylechui/nvim-surround",
       tag = "*", -- Use for stability; omit to use `main` branch for the latest features
       config = function()
           require("nvim-surround").setup({
               -- Configuration here, or leave empty to use defaults
           })
-      end
-  }
+      end }
 
   use {'m4xshen/autoclose.nvim'}
 
@@ -90,8 +88,9 @@ return require('packer').startup(function(use)
       }
   }
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-	setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+      setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+      ft = { "markdown" }, }
 
   use { 'hrsh7th/nvim-cmp' }
 
@@ -102,6 +101,9 @@ return require('packer').startup(function(use)
   use { 'HiPhish/rainbow-delimiters.nvim' }
 
   use { 'lukas-reineke/indent-blankline.nvim' }
+  
+  use { 'numToStr/Comment.nvim',
+      config = function() require('Comment').setup() end }
 
   -- NVIM TREE, for now leave this out as we will just use netrw
   -- use { 'nvim-tree/nvim-tree.lua' }

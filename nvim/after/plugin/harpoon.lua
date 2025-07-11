@@ -2,8 +2,8 @@ local harpoon = require("harpoon")
 
 -- REQUIRED
 harpoon:setup()
--- REQUIRED
 
+-- REQUIRED
 vim.keymap.set("n", "<leader>add", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>rem", function() harpoon:list():remove() end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
