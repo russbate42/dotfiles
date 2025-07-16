@@ -1,7 +1,8 @@
 alias kitty='kitten'
 alias icat='kitty kitten icat'
 
-alias nv=~/sandbox/nvim.appimage
+# alias nv=~/sandbox/nvim.appimage
+alias nv=~/sandbox/nvim-linux-x86_64.appimage
 alias triumf='ssh russbate@triumf-ml1.phas.ubc.ca'
 alias cedar='echo "Not set up yet."'
 alias triumf_t3='echo "Not set up yet."'
