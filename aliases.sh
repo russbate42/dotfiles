@@ -14,6 +14,9 @@ alias lsah='ls -lah'
 alias lsda='ls -lda */'
 alias lssh='ls -la | grep sh'
 alias lsf='find . -maxdepth 1 -type f'
+alias lsg='ls | grep'
+alias lslg='ls -l | grep'
+alias lg='ls -l | grep'
 alias gst='git status'
 alias lspy='ls -l *.py'
 alias py='python'
@@ -23,6 +26,7 @@ alias fh='find $(pwd)/'
 alias findgrep='find $(pwd)/ | grep'
 alias gitgraph='git log --graph --pretty=oneline --abbrev-commit'
 alias physics='source ~/dotfiles/physics_tmux.sh'
+alias pdfcompress='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile='
 
 function checkmem() {
 	if [ -z "$1" ]

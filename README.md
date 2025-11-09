@@ -68,8 +68,15 @@ tmux-yank
 
 
 ## LaTeX
+Trying to work with a larger installation. Currently not working.
+```bash
+texlive-base # Core TeX system (not LaTeX-specific)
+texlive-latex-base # Essential LaTeX packages
+texlive-latex-recommended 
+```
+
 Assuming the installation on Ubuntu is:
-sudo apt-get install texlive
+`sudo apt-get install texlive`
 Install instructions: https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages
 
 I have not used texlive-full for space reasons.
@@ -96,3 +103,24 @@ lipsum
 silence
 lipsum
 wrapfig
+
+
+## General Linux
+
+#### These commands show user installed packages
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+
+zgrep 'Commandline: apt' /var/log/apt/history.log /var/log/apt/history.log.*.gz
+
+#### Remove Packages From apt
+ls /etc/apt/sources.list.d/ | grep spotify
+spotify.list
+sudo rm /etc/apt/sources.list.d/spotify.list
+sudo apt update
+
+#### This relates to tmux configuration defaults
+tmux show-options -g
+tmux swap-window -s 2 -t 1 # for source and target
+tmux move-window
+tmux join-pane -s 2 -t 1
+
