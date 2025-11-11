@@ -1,0 +1,6 @@
+auto_activate_base: false
+channel_priority: flexible
+# restore_free_channel: true
+solver: libmamba
+channels:
+  - defaults

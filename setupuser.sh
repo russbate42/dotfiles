@@ -41,6 +41,9 @@ printf "\n\nsetting up Zathura\n"
 cp -rsT ~/dotfiles/zathura ~/.config/zathura
 
 printf "\n\nsetting up neovim..\n"
+cp -rsT ~/dotfiles/nvim ~/.config/nvim
+# change this to the updated neovim config!
+
 #echo "searching for neovim in ~/sandbox/"
 #if [[ -f ~/sandbox/nvim.appimage ]] then
 #    else if:
@@ -49,6 +52,29 @@ printf "\n\nsetting up neovim..\n"
 #
 #fi
 
-cp -rsT ~/dotfiles/nvim ~/.config/nvim
+
+# Conda
+# check if the conda command exists
+if command -v conda &> /dev/null; then # check for conda install
+    # This means conda is installed
+    echo "rm .condarc"
+    rm .condarc
+    echo "ln -s -T dotfiles/.condarc .condarc"
+    ln -s -T dotfiles/.condarc .condarc
+else
+    printf "Would you like to install conda?\n"
+    read input
+    lower="$input:l"
+
+    if [[ $lower == "yes" || $lower == "y" ]]; then
+        printf "\ninstalling conda .."
+        printf "\nsource install_conda.sh"
+        sleep .2
+        source install_conda.sh
+    else
+        printf "\nSkipping conda installation."
+    fi
+fi
 
 printf "\n\tdone!\n\n"
+
