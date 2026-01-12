@@ -1,33 +1,58 @@
+# kitty terminal
 alias kitty='kitten'
 alias icat='kitty kitten icat'
 
-# alias nv=~/sandbox/nvim.appimage
-alias nv=~/sandbox/nvim-linux-x86_64.appimage
+# Computing
 alias triumf='ssh russbate@triumf-ml1.phas.ubc.ca'
 alias cedar='echo "Not set up yet."'
 alias triumf_t3='echo "Not set up yet."'
+
+# Python
 alias python='python3'
+alias py='python'
+
+# Neovim related
+# alias nv=~/sandbox/nvim.appimage
+alias nv=~/sandbox/nvim-linux-x86_64.appimage
 alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
+
+# Other workflow related
 alias tmuxu='tmux new-session -s R-Ubuntu'
+
+# Listing stuff
+alias lsl='ls -1'
 alias lsd='ls -ld */'
 alias lsah='ls -lah'
 alias lsda='ls -lda */'
+# - Specific languages
 alias lssh='ls -la | grep sh'
+alias lspy='ls -l *.py'
+
+# Finding stuff
+alias findgrep='find $(pwd)/ | grep'
+alias fh='find $(pwd)/'
 alias lsf='find . -maxdepth 1 -type f'
 alias lsg='ls | grep'
 alias lslg='ls -l | grep'
 alias lg='ls -l | grep'
+
+# Git
 alias gst='git status'
-alias lspy='ls -l *.py'
-alias py='python'
+alias gd='git diff'
+alias gitgraph='git log --graph --pretty=oneline --abbrev-commit'
+
+# Memory controls
 alias cm="du -sh -- * | sort -h"
 alias cma="du -h -- * | sort -h"
-alias fh='find $(pwd)/'
-alias findgrep='find $(pwd)/ | grep'
-alias gitgraph='git log --graph --pretty=oneline --abbrev-commit'
+
+# Saved work sessions
 alias physics='source ~/dotfiles/physics_tmux.sh'
+
+# Helpful tools
+# Requires Ghostscript
 alias pdfcompress='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile='
 
+# Helper functions
 function checkmem() {
 	if [ -z "$1" ]
     then
@@ -37,14 +62,6 @@ function checkmem() {
     fi
 }
 
-function thing(){
-    printf "in thing function\n"
-    local node=$1
-    ssh "rbate@lxplus${node}.cern.ch"
-    # exit_status=!?
-    # if [[ "$exit_status" == "" ]]; then
-    #
-}
 function lx(){
     ssh "rbate@lxplus${1}.cern.ch"
 }

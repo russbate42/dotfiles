@@ -17,7 +17,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -26,7 +26,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -41,7 +41,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -73,7 +73,11 @@ ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+                        #######################
+                        ## RUSSELL COMPONENT ##
+                        #######################
+#=============================================================================#
+source ~/.aliases.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -90,28 +94,48 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#######################
-## RUSSELL COMPONENT ##
-#######################
-#=============================================================================#
 # Plugins
 plugins=(... rust)
-plugins=(git)
+plugins=(git vi-mode)
 
 # Vim mode hopefully 
 set -o vi
+export VI_MODE_SET_CURSOR=true
 
-source ~/.aliases.sh
+# Cursor
+# echo -ne '\e[6 q'
+# Other shapes can be achieved by changing the number in the sequence:
+# \e[1 q: Blinking block
+# \e[2 q: Steady block
+# \e[3 q: Blinking underline
+# \e[4 q: Steady underline
+# \e[5 q: Blinking bar
+# \e[6 q: Steady bar, xterm
+# Change cursor shape for different vi modes
 
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'  # Block cursor for normal mode
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} == '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'  # Beam cursor for insert mode
+  fi
+}
+zle -N zle-keymap-select
+
+# Start with beam cursor on zsh init
+zle-line-init() {
+  echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+
+# Use beam cursor for each new prompt
+preexec() {
+  echo -ne '\e[5 q'
+}
 
 function printalias(){
 printf 'fh
@@ -138,7 +162,7 @@ printf "\n"
 # for screen color with tmux
 export TERM=xterm-256color
 # echo "TERM=${TERM}"
-echo ""
+# echo ""
 
 # Languages
 export LC_ALL=en_US.UTF-8

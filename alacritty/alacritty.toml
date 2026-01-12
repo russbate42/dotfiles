@@ -148,7 +148,7 @@ save_to_clipboard     = true
 
 [cursor.vi_mode_style]
 shape                 = "Block"
-blinking              = "Off"
+blinking              = "On"
 
 [cursor]
 blink_interval        = 500
