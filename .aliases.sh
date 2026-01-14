@@ -5,7 +5,8 @@ EOS_DIR=/eos/user/r/$USER
 alias fh='find $(pwd) -maxdepth 1'
 alias goeos="cd ${EOS_DIR} && ls -lah"
 alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
-alias nv="~/sandbox/nvim.appimage"
+# alias nv="~/sandbox/nvim.appimage"
+alias nv="~/sandbox/nvim-linux-x86_64.appimage"
 alias lsa='ls -la'
 alias lsh='ls -lh'
 alias lh='ls -lh'
@@ -49,6 +50,20 @@ function checkmem() {
 	else
 		du -h ./$1 | sort -h
     fi
+}
+
+function make_file_list(){
+    input_dir=./
+    output_file=./output_files.txt
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -h|--help) printf "Make file lists.\n"; exit 0;;
+            -i|--input-dir) input_dir=$2; shift 2;;
+            -o|--output-dir) output_file=$2; shift 2;;
+            -*|--*) printf "Unknown option\n"; exit 1;;
+        esac
+    done
+    find $input_dir -maxdepth 1 | tail -n +2 > $output_file
 }
 
 function printalias(){
