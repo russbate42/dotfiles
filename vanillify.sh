@@ -16,6 +16,8 @@ echo "rm ../.gitconfig"
 rm ~/.gitconfig
 echo "rm ~/setupenv.sh"
 rm ~/setupenv.sh
+echo "rm ~/.rootrc"
+rm ~/.rootrc
 
 echo -e "\nRemoving .zcompdump-* files"
 

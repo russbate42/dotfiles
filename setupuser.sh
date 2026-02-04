@@ -15,6 +15,10 @@ ln -s -T dotfiles/.zshrc .zshrc
 echo "ln -s -T dotfiles/.aliases.sh .aliases.sh"
 ln -s -T dotfiles/.aliases.sh .aliases.sh
 
+# ROOT
+echo "ln -s -T dotfiles/.rootrc .rootrc"
+ln -s -T dotfiles/.rootrc .rootrc
+
 # tmux
 echo "ln -s -T dotfiles/.tmux.conf .tmux.conf"
 ln -s -T dotfiles/.tmux.conf .tmux.conf
