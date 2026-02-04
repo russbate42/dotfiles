@@ -66,3 +66,16 @@ function lx(){
     ssh "rbate@lxplus${1}.cern.ch"
 }
 
+function mount_filesystem() {
+    printf "\n"
+    printf "For now, just prints out an example\n"
+    # if a mount directory does not exist
+    printf "mkdir /mnt/new_mount_directory_name\n"
+    # general mount command
+    # printf "sudo sshfs -o allow_other,default_permissions rbate@lxplus.cern.ch:/eos/user/r/rbate /mnt/lxplus_mnt\n"
+    printf "sudo sshfs -o allow_other,idmap=user,uid=$(id -u),gid=$(id -g),reconnect rbate@lxplus.cern.ch:/eos/user/r/rbate /mnt/lxplus_mnt\n"
+    printf "\n"
+    printf "unmount with:\n"
+    printf "sudo umount /mnt/lxplus_mnt\n"
+    printf "\n"
+}
