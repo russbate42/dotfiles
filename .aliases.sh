@@ -4,11 +4,13 @@ EOS_DIR=/eos/user/r/$USER
 
 alias fh='find $(pwd) -maxdepth 1'
 alias goeos="cd ${EOS_DIR} && ls -lah"
+alias higpeos="cd /eos/atlas/atlascerngroupdisk/phys-higp/higgs-pairs/Run3/bbbb"
 alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
 # alias nv="~/sandbox/nvim.appimage"
 alias nv="~/sandbox/nvim-linux-x86_64.appimage"
 alias lsa='ls -la'
 alias lsh='ls -lh'
+alias lssh='ls -lah | grep sh'
 alias lh='ls -lh'
 alias ll='ls -l'
 alias lspy='ls -l *.py'
