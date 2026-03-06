@@ -13,6 +13,7 @@ alias lsh='ls -lh'
 alias lssh='ls -lah | grep sh'
 alias lh='ls -lh'
 alias ll='ls -l'
+alias lsl='ls -1'
 alias lspy='ls -l *.py'
 alias cm="du -sh -- * | sort -h"
 alias cma="du -h -- * | sort -h"

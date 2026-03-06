@@ -12,8 +12,14 @@ echo "rm .zshrc"
 rm .zshrc
 echo "ln -s -T dotfiles/.zshrc .zshrc"
 ln -s -T dotfiles/.zshrc .zshrc
+
+# aliases
 echo "ln -s -T dotfiles/.aliases.sh .aliases.sh"
 ln -s -T dotfiles/.aliases.sh .aliases.sh
+
+echo "enabling lingering server processes .."
+echo "systemctl enable-linger"
+systemctl enable-linger
 
 # ROOT
 echo "ln -s -T dotfiles/.rootrc .rootrc"
