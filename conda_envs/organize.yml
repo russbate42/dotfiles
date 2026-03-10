@@ -1,0 +1,6 @@
+name: organize
+channels:
+  - defaults
+dependencies:
+  - ics
+prefix: /home/russbate/miniconda3/envs/organize

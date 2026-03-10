@@ -1,0 +1,7 @@
+name: sympy
+channels:
+  - defaults
+dependencies:
+  - sympy
+  - jupyterlab
+prefix: /home/russbate/miniconda3/envs/sympy

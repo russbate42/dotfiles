@@ -1,0 +1,6 @@
+name: webdev
+channels:
+  - defaults
+dependencies:
+  - django
+prefix: /home/russbate/miniconda3/envs/webdev
