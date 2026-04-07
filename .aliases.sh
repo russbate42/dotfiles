@@ -6,8 +6,6 @@ alias fh='find $(pwd) -maxdepth 1'
 alias goeos="cd ${EOS_DIR} && ls -lah"
 alias higpeos="cd /eos/atlas/atlascerngroupdisk/phys-higp/higgs-pairs/Run3/bbbb"
 alias cleanshell="source ~/dotfiles/clean_shell_lxplus.sh"
-# alias nv="~/sandbox/nvim.appimage"
-alias nv="~/sandbox/nvim-linux-x86_64.appimage"
 alias lsa='ls -la'
 alias lsh='ls -lh'
 alias lssh='ls -lah | grep sh'
@@ -33,6 +31,28 @@ alias lxtm="systemctl --user start tmux.service && tmux a"
 alias lsag="ls -lah | grep"
 alias lg="ls | grep"
 alias fg="find $(pwd) -maxdepth 1 | grep"
+
+# alias nv="~/sandbox/nvim.appimage"
+if [[ -f ~/NeoVimConfig/nvim-linux-x86_64.appimage ]]; then
+    printf "\nFound neovim build in ~/NeoVimConfig/\n"
+    alias nv="~/NeoVimConfig/nvim-linux-x86_64.appimage"
+elif [[ -f ~/sandbox/nvim-linux-x86_64.appimage ]]; then
+    printf "\nFound neovim build in ~/sandbox/\n"
+    alias nv="~/sandbox/nvim-linux-x86_64.appimage"
+else
+    printf "No neovim found. Searching system\n"
+    neovim_path=$(find ~/ -maxdepth 2 | grep appimage)
+    count=$(find ~/ | grep -c appimage)
+    if [[ $count -eq 0 ]]; then
+        printf "\nNo neovim found on system!\n"
+    elif [[ $count -eq 1 ]]; then
+        printf "\nFound ${neovim_path}\n"
+        printf "\nAliasing nv=\"${neovim_path}\"\n"
+        alias nv="${neovim_path}"
+    else
+        printf "\nFound multiple neovims. Ambiguous. No alias set.\n"
+    fi
+fi
 
 function hidden() {
     ls -a "$@" | grep '^\.';
@@ -63,10 +83,10 @@ function make_file_list(){
             -h|--help) printf "Make file lists.\n"; exit 0;;
             -i|--input-dir) input_dir=$2; shift 2;;
             -o|--output-dir) output_file=$2; shift 2;;
-            -*|--*) printf "Unknown option\n"; exit 1;;
+            *) printf "Unknown option\n"; exit 1;;
         esac
     done
-    find $input_dir -maxdepth 1 | tail -n +2 > $output_file
+    find "${input_dir}" -maxdepth 1 | tail -n +2 > "${output_file}"
 }
 
 function printalias(){

@@ -33,6 +33,15 @@ fi
 # echo "ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt"
 # export ALRB_rootVersion=6.26.04-x86_64-centos7-gcc11-opt
 
+
+# Do we need this for rust?
+. "$HOME/.cargo/env"
+
+# Required for updated node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Python Configuration
 # scl enable rh-python38 bash --norc
 PYTHON_VERSION=$(python3 -V 2>&1) #Need to redirect, python -V goes to stderr(?)
@@ -163,4 +172,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
