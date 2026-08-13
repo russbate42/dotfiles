@@ -13,7 +13,7 @@ alias py='python'
 
 # Neovim related
 # alias nv=~/sandbox/nvim.appimage
-alias nv=~/sandbox/nvim-linux-x86_64.appimage
+alias nv=~/NeoVimConfig/nvim-linux-x86_64.appimage
 alias cleannvim='rm -f ~/.local/state/nvim/swap/*'
 
 # Other workflow related

@@ -40,8 +40,8 @@ cp -rsT ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 printf "\n\nsetting up Zathura\n"
 cp -rsT ~/dotfiles/zathura ~/.config/zathura
 
-printf "\n\nsetting up neovim..\n"
-cp -rsT ~/dotfiles/nvim ~/.config/nvim
+# printf "\n\nsetting up neovim..\n"
+# cp -rsT ~/dotfiles/nvim ~/.config/nvim
 # change this to the updated neovim config!
 
 #echo "searching for neovim in ~/sandbox/"
@@ -70,7 +70,7 @@ else
         printf "\ninstalling conda .."
         printf "\nsource install_conda.sh"
         sleep .2
-        source install_conda.sh
+        source ~/dotfiles/install_conda.sh
     else
         printf "\nSkipping conda installation."
     fi

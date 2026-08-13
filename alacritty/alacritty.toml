@@ -7,7 +7,7 @@
 #"~/.config/alacritty/keybindings.toml",
 #]
 
-[shell]
+[terminal.shell]
 program               = "/usr/bin/zsh"
 args                  = [ "--login", ]
 
@@ -40,11 +40,15 @@ history               = 65535
 #multiplier            = 3
 
 [font]
-#normal                = { family = "FantasqueSansMNerdFont Propo", style = "Regular" }
-#bold                  = { family = "FantasqueSansMNerdFont Propo", style = "Bold" }
-#italic                = { family = "FantasqueSansMNerdFont Propo", style = "Italic" }
-#bold_italic           = { family = "FantasqueSansMNerdFont Propo", style = "Bold Italic" }
-size                  = 12.0
+normal      = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+bold        = { family = "FiraCode Nerd Font Mono", style = "Bold" }
+italic      = { family = "FiraCode Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "FiraCode Nerd Font Mono", style = "Bold Italic" }
+#normal      = { family = "0xProto Nerd Font Mono", style = "Regular" }
+#bold        = { family = "0xProto Nerd Font Mono", style = "Bold" }
+#italic      = { family = "0xProto Nerd Font Mono", style = "Italic" }
+#bold_italic = { family = "0xProto Nerd Font Mono", style = "Bold Italic" }
+size        = 12
 #offset                = { x = 0, y = 0 }
 #glyph_offset          = { x = 0, y = 0 }
 #builtin_box_drawing   = true
